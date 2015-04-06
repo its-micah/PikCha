@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PCProfileInfoViewController.h
 //  PikCha
 //
 //  Created by Micah Lanier on 4/6/15.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ViewController : UIViewController
+@interface PCProfileInfoViewController : UIViewController
 
 
 @end
