@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface ViewController : UIViewController
+@interface PCLoginViewController : UIViewController
 
-
+@property NSString *username;
+@property NSString *password;
 @end
 

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C71ADCAE1AD3204500190E51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCAD1AD3204500190E51 /* main.m */; };
 		C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCB01AD3204500190E51 /* AppDelegate.m */; };
-		C71ADCB41AD3204500190E51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCB31AD3204500190E51 /* ViewController.m */; };
+		C71ADCB41AD3204500190E51 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCB31AD3204500190E51 /* PCLoginViewController.m */; };
 		C71ADCB71AD3204500190E51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB51AD3204500190E51 /* Main.storyboard */; };
 		C71ADCB91AD3204500190E51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB81AD3204500190E51 /* Images.xcassets */; };
 		C71ADCBC1AD3204500190E51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */; };
@@ -48,8 +48,8 @@
 		C71ADCAD1AD3204500190E51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C71ADCAF1AD3204500190E51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C71ADCB01AD3204500190E51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C71ADCB21AD3204500190E51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C71ADCB31AD3204500190E51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C71ADCB21AD3204500190E51 /* PCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCLoginViewController.h; sourceTree = "<group>"; };
+		C71ADCB31AD3204500190E51 /* PCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCLoginViewController.m; sourceTree = "<group>"; };
 		C71ADCB61AD3204500190E51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C71ADCB81AD3204500190E51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C71ADCBB1AD3204500190E51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 			children = (
 				C71ADCAF1AD3204500190E51 /* AppDelegate.h */,
 				C71ADCB01AD3204500190E51 /* AppDelegate.m */,
-				C71ADCB21AD3204500190E51 /* ViewController.h */,
-				C71ADCB31AD3204500190E51 /* ViewController.m */,
+				C71ADCB21AD3204500190E51 /* PCLoginViewController.h */,
+				C71ADCB31AD3204500190E51 /* PCLoginViewController.m */,
 				C71ADCB51AD3204500190E51 /* Main.storyboard */,
 				C71ADCB81AD3204500190E51 /* Images.xcassets */,
 				C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */,
@@ -291,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71ADCB41AD3204500190E51 /* ViewController.m in Sources */,
+				C71ADCB41AD3204500190E51 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 			);
