@@ -9,6 +9,8 @@
 #import "PCLoginViewController.h"
 
 @interface PCLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -16,13 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
 - (IBAction)onCreateAccountTapped:(id)sender {
     PFUser *newUser = [PFUser user];
-    newUser.username = self.username;
-    newUser.password = self.password;
+    newUser.username = self.usernameTextField.text;
+    newUser.password = self.passwordTextField.text;
 
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -33,11 +34,20 @@
         }
     }];
 
+    [self resignFirstResponder];
+
 }
 
 - (IBAction)onLoginTapped:(id)sender {
-
-    
+    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
+        if (user) {
+            //go to user feed
+            NSLog(@"HI %@", user.username);
+        } else {
+            //login failed.
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 @end
