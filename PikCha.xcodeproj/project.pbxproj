@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF11AD3348200A53032 /* PCProfileViewController.m */; };
 		6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF41AD336B000A53032 /* PCFeedViewController.m */; };
+		6B68FFF81AD33D8200A53032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B68FFF61AD33D8200A53032 /* Main.storyboard */; };
 		C71ADCAE1AD3204500190E51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCAD1AD3204500190E51 /* main.m */; };
 		C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCB01AD3204500190E51 /* AppDelegate.m */; };
-		C71ADCB41AD3204500190E51 /* PCProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCB31AD3204500190E51 /* PCProfileInfoViewController.m */; };
-		C71ADCB71AD3204500190E51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB51AD3204500190E51 /* Main.storyboard */; };
 		C71ADCB91AD3204500190E51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB81AD3204500190E51 /* Images.xcassets */; };
 		C71ADCBC1AD3204500190E51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */; };
 		C71ADCC81AD3204500190E51 /* PikChaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCC71AD3204500190E51 /* PikChaTests.m */; };
@@ -49,14 +48,14 @@
 		6B68FFF11AD3348200A53032 /* PCProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCProfileViewController.m; path = PikCha/Controller/PCProfileViewController.m; sourceTree = "<group>"; };
 		6B68FFF31AD336B000A53032 /* PCFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCFeedViewController.h; path = PikCha/Controller/PCFeedViewController.h; sourceTree = "<group>"; };
 		6B68FFF41AD336B000A53032 /* PCFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCFeedViewController.m; path = PikCha/Controller/PCFeedViewController.m; sourceTree = "<group>"; };
+		6B68FFF71AD33D8200A53032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C71ADCA81AD3204500190E51 /* PikCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PikCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71ADCAC1AD3204500190E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71ADCAD1AD3204500190E51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C71ADCAF1AD3204500190E51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C71ADCB01AD3204500190E51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C71ADCB21AD3204500190E51 /* PCProfileInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PCProfileInfoViewController.h; path = PikCha/PCProfileInfoViewController.h; sourceTree = "<group>"; };
-		C71ADCB31AD3204500190E51 /* PCProfileInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PCProfileInfoViewController.m; path = PikCha/PCProfileInfoViewController.m; sourceTree = "<group>"; };
-		C71ADCB61AD3204500190E51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C71ADCB21AD3204500190E51 /* PCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCLoginViewController.h; sourceTree = "<group>"; };
+		C71ADCB31AD3204500190E51 /* PCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCLoginViewController.m; sourceTree = "<group>"; };
 		C71ADCB81AD3204500190E51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C71ADCBB1AD3204500190E51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C71ADCC11AD3204500190E51 /* PikChaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PikChaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +118,6 @@
 			children = (
 				6B68FFF31AD336B000A53032 /* PCFeedViewController.h */,
 				6B68FFF41AD336B000A53032 /* PCFeedViewController.m */,
-				C71ADCB21AD3204500190E51 /* PCProfileInfoViewController.h */,
-				C71ADCB31AD3204500190E51 /* PCProfileInfoViewController.m */,
 				6B68FFF01AD3348200A53032 /* PCProfileViewController.h */,
 				6B68FFF11AD3348200A53032 /* PCProfileViewController.m */,
 			);
@@ -130,7 +127,6 @@
 		6B68FFEE1AD333B100A53032 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C71ADCB51AD3204500190E51 /* Main.storyboard */,
 				C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */,
 			);
 			name = View;
@@ -168,6 +164,7 @@
 		C71ADCAA1AD3204500190E51 /* PikCha */ = {
 			isa = PBXGroup;
 			children = (
+				6B68FFF61AD33D8200A53032 /* Main.storyboard */,
 				F3FA72F11AD3244400E53992 /* libsqlite3.dylib */,
 				F3FA72EF1AD3243900E53992 /* libz.dylib */,
 				F3FA72ED1AD3242F00E53992 /* SystemConfiguration.framework */,
@@ -180,6 +177,8 @@
 				F3FA72DF1AD323FD00E53992 /* AudioToolbox.framework */,
 				C71ADCAF1AD3204500190E51 /* AppDelegate.h */,
 				C71ADCB01AD3204500190E51 /* AppDelegate.m */,
+				C71ADCB21AD3204500190E51 /* PCLoginViewController.h */,
+				C71ADCB31AD3204500190E51 /* PCLoginViewController.m */,
 				C71ADCB81AD3204500190E51 /* Images.xcassets */,
 				C71ADCAB1AD3204500190E51 /* Supporting Files */,
 			);
@@ -305,7 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71ADCB71AD3204500190E51 /* Main.storyboard in Resources */,
+				6B68FFF81AD33D8200A53032 /* Main.storyboard in Resources */,
 				C71ADCBC1AD3204500190E51 /* LaunchScreen.xib in Resources */,
 				C71ADCB91AD3204500190E51 /* Images.xcassets in Resources */,
 			);
@@ -325,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71ADCB41AD3204500190E51 /* PCProfileInfoViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
@@ -352,13 +350,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C71ADCB51AD3204500190E51 /* Main.storyboard */ = {
+		6B68FFF61AD33D8200A53032 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C71ADCB61AD3204500190E51 /* Base */,
+				6B68FFF71AD33D8200A53032 /* Base */,
 			);
 			name = Main.storyboard;
-			path = PikCha;
 			sourceTree = "<group>";
 		};
 		C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */ = {
