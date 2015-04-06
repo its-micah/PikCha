@@ -52,6 +52,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FFc-2Y-7eB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oP6-af-SaR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-tH-ryL">
@@ -129,6 +130,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FJL-ro-Occ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GgM-jc-mAL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1S-If-lTo">
