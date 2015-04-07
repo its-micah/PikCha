@@ -8,8 +8,17 @@
 
 #import "PCProfileInfoTableViewController.h"
 #import <Parse/Parse.h>
+#import "PCUser.h"
 
 @interface PCProfileInfoTableViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *profileNameTextField;
+@property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (strong, nonatomic) IBOutlet UITextField *websiteTextField;
+@property (strong, nonatomic) IBOutlet UITextView *bioTextView;
+@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
+@property (strong, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (strong, nonatomic) IBOutlet UITextField *genderTextField;
+@property (strong, nonatomic) IBOutlet UIImageView *profilePictureImageView;
 
 @end
 
@@ -19,16 +28,32 @@
     [super viewDidLoad];
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    self.userNameLabel.text = self.user.username; 
+
 }
 
 
 - (IBAction)onDoneButtonTapped:(id)sender {
-    
+    self.user.fullName = self.profileNameTextField.text;
+    self.user.website = self.websiteTextField.text;
+    NSLog(@"%@", self.user.website);
+    self.user.bio = self.bioTextView.text;
+    self.user.email = self.emailTextField.text;
+    self.user.phoneNumber = self.phoneTextField.text;
+    self.user.gender = self.genderTextField.text;
+
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Hooray! We're Saved");
+            //THIS IS WHERE WE GOTTA PUSH // 
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
+
+
 }
 
 
