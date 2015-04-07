@@ -28,6 +28,7 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             NSLog(@"Yay!");
+            [self performSegueWithIdentifier:@"ProfileInfoSegue" sender:nil];
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"WOAH NOW" message:@"You don't have an account" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertView show];
