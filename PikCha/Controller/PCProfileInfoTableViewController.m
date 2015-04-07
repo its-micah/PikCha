@@ -7,10 +7,12 @@
 //
 
 #import "PCProfileInfoTableViewController.h"
+#import "PCProfileViewController.h"
 #import <Parse/Parse.h>
 #import "PCUser.h"
 
-@interface PCProfileInfoTableViewController ()
+@interface PCProfileInfoTableViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property (strong, nonatomic) IBOutlet UITextField *profileNameTextField;
 @property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (strong, nonatomic) IBOutlet UITextField *websiteTextField;
@@ -43,6 +45,13 @@
     self.user.phoneNumber = self.phoneTextField.text;
     self.user.gender = self.genderTextField.text;
 
+
+    NSData *imageData = UIImagePNGRepresentation(self.profilePictureImageView.image);
+    PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
+    [imageFile saveInBackground];
+    self.user.profileImage = imageFile;
+
+
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved");
@@ -52,63 +61,34 @@
             NSLog(@"%@", error);
         }
     }];
-
-
 }
 
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (IBAction)onAddImageButtonTapped:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    self.profilePictureImageView.image = image;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowProfileSegue"]) {
+        UITabBarController *tabVC = segue.destinationViewController;
+        PCProfileViewController *profileVC = [tabVC.viewControllers objectAtIndex:3];
+        profileVC.user = self.user;
+
+    }
 }
-*/
 
 @end

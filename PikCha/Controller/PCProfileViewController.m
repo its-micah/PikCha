@@ -9,6 +9,14 @@
 #import "PCProfileViewController.h"
 
 @interface PCProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *profileCollectionView;
 
 @end
 
@@ -16,22 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.nameLabel.text = self.user.username;
+
+    PFFile *userImageFile = self.user.profileImage;
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            self.profileImageView.image = [UIImage imageWithData:imageData];
+        }
+    }];
+
+    //self.user.profileImage = [PFFile]
+//    self.profileImageView.image = self.user.profileImage;
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

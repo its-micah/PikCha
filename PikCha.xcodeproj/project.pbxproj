@@ -16,6 +16,8 @@
 		C71ADCB91AD3204500190E51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB81AD3204500190E51 /* Images.xcassets */; };
 		C71ADCBC1AD3204500190E51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */; };
 		C71ADCC81AD3204500190E51 /* PikChaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCC71AD3204500190E51 /* PikChaTests.m */; };
+		C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C951AD477FE00F7F138 /* PCSearchViewController.m */; };
+		C7666C991AD4782800F7F138 /* PCLikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C981AD4782800F7F138 /* PCLikesViewController.m */; };
 		C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A1176D1AD43AF500444FF2 /* PCPhoto.m */; };
 		C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */; };
 		F3FA72D91AD3237D00E53992 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D31AD3237D00E53992 /* Bolts.framework */; };
@@ -65,6 +67,10 @@
 		C71ADCC11AD3204500190E51 /* PikChaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PikChaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71ADCC61AD3204500190E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71ADCC71AD3204500190E51 /* PikChaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PikChaTests.m; sourceTree = "<group>"; };
+		C7666C941AD477FE00F7F138 /* PCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCSearchViewController.h; path = PikCha/Controller/PCSearchViewController.h; sourceTree = "<group>"; };
+		C7666C951AD477FE00F7F138 /* PCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCSearchViewController.m; path = PikCha/Controller/PCSearchViewController.m; sourceTree = "<group>"; };
+		C7666C971AD4782800F7F138 /* PCLikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLikesViewController.h; sourceTree = "<group>"; };
+		C7666C981AD4782800F7F138 /* PCLikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLikesViewController.m; sourceTree = "<group>"; };
 		C7A1176C1AD43AF500444FF2 /* PCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPhoto.h; sourceTree = "<group>"; };
 		C7A1176D1AD43AF500444FF2 /* PCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPhoto.m; sourceTree = "<group>"; };
 		C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCLoginViewController.m; path = PikCha/PCLoginViewController.m; sourceTree = "<group>"; };
@@ -132,10 +138,14 @@
 				C71ADCB01AD3204500190E51 /* AppDelegate.m */,
 				6B68FFF31AD336B000A53032 /* PCFeedViewController.h */,
 				6B68FFF41AD336B000A53032 /* PCFeedViewController.m */,
+				C7666C971AD4782800F7F138 /* PCLikesViewController.h */,
+				C7666C981AD4782800F7F138 /* PCLikesViewController.m */,
 				6B68FFF01AD3348200A53032 /* PCProfileViewController.h */,
 				6B68FFF11AD3348200A53032 /* PCProfileViewController.m */,
 				F3FA72F61AD3552900E53992 /* PCProfileInfoTableViewController.h */,
 				F3FA72F71AD3552900E53992 /* PCProfileInfoTableViewController.m */,
+				C7666C941AD477FE00F7F138 /* PCSearchViewController.h */,
+				C7666C951AD477FE00F7F138 /* PCSearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -342,7 +352,9 @@
 			files = (
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
+				C7666C991AD4782800F7F138 /* PCLikesViewController.m in Sources */,
 				6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */,
+				C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */,
 				F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,

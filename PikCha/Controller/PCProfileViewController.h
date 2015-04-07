@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PCUser.h"
 
 @interface PCProfileViewController : UIViewController
+
+@property PCUser *user;
 
 @end
