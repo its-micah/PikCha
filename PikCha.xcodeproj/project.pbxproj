@@ -15,6 +15,7 @@
 		C71ADCB91AD3204500190E51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB81AD3204500190E51 /* Images.xcassets */; };
 		C71ADCBC1AD3204500190E51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */; };
 		C71ADCC81AD3204500190E51 /* PikChaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCC71AD3204500190E51 /* PikChaTests.m */; };
+		C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A1176D1AD43AF500444FF2 /* PCPhoto.m */; };
 		C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */; };
 		F3FA72D91AD3237D00E53992 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D31AD3237D00E53992 /* Bolts.framework */; };
 		F3FA72DA1AD3237D00E53992 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D41AD3237D00E53992 /* Parse.framework */; };
@@ -61,6 +62,8 @@
 		C71ADCC11AD3204500190E51 /* PikChaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PikChaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71ADCC61AD3204500190E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71ADCC71AD3204500190E51 /* PikChaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PikChaTests.m; sourceTree = "<group>"; };
+		C7A1176C1AD43AF500444FF2 /* PCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPhoto.h; sourceTree = "<group>"; };
+		C7A1176D1AD43AF500444FF2 /* PCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPhoto.m; sourceTree = "<group>"; };
 		C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCLoginViewController.m; path = PikCha/PCLoginViewController.m; sourceTree = "<group>"; };
 		C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLoginViewController.h; path = PikCha/PCLoginViewController.h; sourceTree = "<group>"; };
 		F3FA72D31AD3237D00E53992 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		6B68FFEF1AD333B900A53032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C7A1176C1AD43AF500444FF2 /* PCPhoto.h */,
+				C7A1176D1AD43AF500444FF2 /* PCPhoto.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
 				6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */,
+				C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
