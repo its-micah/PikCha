@@ -12,10 +12,12 @@
 
 @property NSString *fullName;
 @property NSString *bio;
-@property NSURL *website; 
+@property NSString *website;
 @property PFFile *profileImage;
+@property NSString *phoneNumber;
+@property NSString *gender; 
 
-+ (NSString *)parseClassName;
+//+ (NSString *)parseClassName;
 
 
 @end

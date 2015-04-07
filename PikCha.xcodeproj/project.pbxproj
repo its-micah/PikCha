@@ -126,8 +126,8 @@
 		6B68FFED1AD333AA00A53032 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */,
 				C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */,
+				C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */,
 				C71ADCAF1AD3204500190E51 /* AppDelegate.h */,
 				C71ADCB01AD3204500190E51 /* AppDelegate.m */,
 				6B68FFF31AD336B000A53032 /* PCFeedViewController.h */,

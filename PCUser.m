@@ -15,15 +15,16 @@
 @dynamic username; 
 @dynamic profileImage;
 @dynamic fullName;
-@dynamic website; 
+@dynamic website;
+@dynamic phoneNumber;
+@dynamic gender; 
 
 + (void)load {
     [self registerSubclass];
 }
 
-+ (NSString *)parseClassName {
-    return @"PCUser";
-}
-
+//+ (NSString *)parseClassName {
+//    return @"PFUser";
+//}
 
 @end
