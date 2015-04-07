@@ -32,6 +32,7 @@
 		F3FA72EE1AD3242F00E53992 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72ED1AD3242F00E53992 /* SystemConfiguration.framework */; };
 		F3FA72F01AD3243900E53992 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72EF1AD3243900E53992 /* libz.dylib */; };
 		F3FA72F21AD3244400E53992 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72F11AD3244400E53992 /* libsqlite3.dylib */; };
+		F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FA72F71AD3552900E53992 /* PCProfileInfoTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		F3FA72ED1AD3242F00E53992 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F3FA72EF1AD3243900E53992 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F3FA72F11AD3244400E53992 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F3FA72F61AD3552900E53992 /* PCProfileInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCProfileInfoTableViewController.h; path = PikCha/Controller/PCProfileInfoTableViewController.h; sourceTree = "<group>"; };
+		F3FA72F71AD3552900E53992 /* PCProfileInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCProfileInfoTableViewController.m; path = PikCha/Controller/PCProfileInfoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				6B68FFF41AD336B000A53032 /* PCFeedViewController.m */,
 				6B68FFF01AD3348200A53032 /* PCProfileViewController.h */,
 				6B68FFF11AD3348200A53032 /* PCProfileViewController.m */,
+				F3FA72F61AD3552900E53992 /* PCProfileInfoTableViewController.h */,
+				F3FA72F71AD3552900E53992 /* PCProfileInfoTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			files = (
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
+				F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
 				6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */,
