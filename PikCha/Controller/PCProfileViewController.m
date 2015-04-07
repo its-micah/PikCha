@@ -34,11 +34,13 @@
         }
     }];
 
-    //self.user.profileImage = [PFFile]
-//    self.profileImageView.image = self.user.profileImage;
-
 }
 
+- (IBAction)onEditProfileTapped:(id)sender {
+
+
+
+}
 
 
 
