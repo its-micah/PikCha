@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6800A21AD43AEC00A53032 /* PCUser.m */; };
 		6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF11AD3348200A53032 /* PCProfileViewController.m */; };
 		6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF41AD336B000A53032 /* PCFeedViewController.m */; };
 		6B68FFF81AD33D8200A53032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B68FFF61AD33D8200A53032 /* Main.storyboard */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B6800A11AD43AEC00A53032 /* PCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCUser.h; sourceTree = "<group>"; };
+		6B6800A21AD43AEC00A53032 /* PCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCUser.m; sourceTree = "<group>"; };
 		6B68FFF01AD3348200A53032 /* PCProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCProfileViewController.h; path = PikCha/Controller/PCProfileViewController.h; sourceTree = "<group>"; };
 		6B68FFF11AD3348200A53032 /* PCProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCProfileViewController.m; path = PikCha/Controller/PCProfileViewController.m; sourceTree = "<group>"; };
 		6B68FFF31AD336B000A53032 /* PCFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCFeedViewController.h; path = PikCha/Controller/PCFeedViewController.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 		6B68FFEF1AD333B900A53032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B6800A11AD43AEC00A53032 /* PCUser.h */,
+				6B6800A21AD43AEC00A53032 /* PCUser.m */,
 				C7A1176C1AD43AF500444FF2 /* PCPhoto.h */,
 				C7A1176D1AD43AF500444FF2 /* PCPhoto.m */,
 			);
@@ -337,6 +342,7 @@
 			files = (
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
+				6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */,
 				F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
