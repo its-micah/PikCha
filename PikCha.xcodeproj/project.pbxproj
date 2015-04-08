@@ -23,6 +23,11 @@
 		C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A1176D1AD43AF500444FF2 /* PCPhoto.m */; };
 		C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */; };
 		C7D661F41AD5859900EC008F /* PCUserProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */; };
+		C7D661F71AD5923900EC008F /* PCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661F61AD5923900EC008F /* PCComment.m */; };
+		C7D661FA1AD592B800EC008F /* PCLike.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661F91AD592B800EC008F /* PCLike.m */; };
+		C7D661FD1AD5933300EC008F /* PCHashtag.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661FC1AD5933300EC008F /* PCHashtag.m */; };
+		C7D662001AD593D000EC008F /* PCTag.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661FF1AD593D000EC008F /* PCTag.m */; };
+		C7D662031AD5944300EC008F /* PCFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D662021AD5944300EC008F /* PCFollow.m */; };
 		F3FA72D91AD3237D00E53992 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D31AD3237D00E53992 /* Bolts.framework */; };
 		F3FA72DA1AD3237D00E53992 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D41AD3237D00E53992 /* Parse.framework */; };
 		F3FA72DB1AD3237D00E53992 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D51AD3237D00E53992 /* ParseCrashReporting.framework */; };
@@ -84,6 +89,16 @@
 		C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLoginViewController.h; path = PikCha/PCLoginViewController.h; sourceTree = "<group>"; };
 		C7D661F21AD5859900EC008F /* PCUserProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCUserProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCUserProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		C7D661F51AD5923900EC008F /* PCComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCComment.h; sourceTree = "<group>"; };
+		C7D661F61AD5923900EC008F /* PCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCComment.m; sourceTree = "<group>"; };
+		C7D661F81AD592B800EC008F /* PCLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLike.h; sourceTree = "<group>"; };
+		C7D661F91AD592B800EC008F /* PCLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLike.m; sourceTree = "<group>"; };
+		C7D661FB1AD5933300EC008F /* PCHashtag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCHashtag.h; sourceTree = "<group>"; };
+		C7D661FC1AD5933300EC008F /* PCHashtag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCHashtag.m; sourceTree = "<group>"; };
+		C7D661FE1AD593D000EC008F /* PCTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTag.h; sourceTree = "<group>"; };
+		C7D661FF1AD593D000EC008F /* PCTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTag.m; sourceTree = "<group>"; };
+		C7D662011AD5944300EC008F /* PCFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCFollow.h; sourceTree = "<group>"; };
+		C7D662021AD5944300EC008F /* PCFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCFollow.m; sourceTree = "<group>"; };
 		F3FA72D31AD3237D00E53992 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		F3FA72D41AD3237D00E53992 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		F3FA72D51AD3237D00E53992 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -177,10 +192,20 @@
 		6B68FFEF1AD333B900A53032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6B6800A11AD43AEC00A53032 /* PCUser.h */,
-				6B6800A21AD43AEC00A53032 /* PCUser.m */,
+				C7D661F51AD5923900EC008F /* PCComment.h */,
+				C7D661F61AD5923900EC008F /* PCComment.m */,
+				C7D662011AD5944300EC008F /* PCFollow.h */,
+				C7D662021AD5944300EC008F /* PCFollow.m */,
+				C7D661FB1AD5933300EC008F /* PCHashtag.h */,
+				C7D661FC1AD5933300EC008F /* PCHashtag.m */,
+				C7D661F81AD592B800EC008F /* PCLike.h */,
+				C7D661F91AD592B800EC008F /* PCLike.m */,
 				C7A1176C1AD43AF500444FF2 /* PCPhoto.h */,
 				C7A1176D1AD43AF500444FF2 /* PCPhoto.m */,
+				C7D661FE1AD593D000EC008F /* PCTag.h */,
+				C7D661FF1AD593D000EC008F /* PCTag.m */,
+				6B6800A11AD43AEC00A53032 /* PCUser.h */,
+				6B6800A21AD43AEC00A53032 /* PCUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -365,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D661F71AD5923900EC008F /* PCComment.m in Sources */,
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
 				C7D661F41AD5859900EC008F /* PCUserProfileCollectionViewCell.m in Sources */,
@@ -373,8 +399,12 @@
 				6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */,
 				C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */,
 				F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */,
+				C7D661FD1AD5933300EC008F /* PCHashtag.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
+				C7D662001AD593D000EC008F /* PCTag.m in Sources */,
+				C7D662031AD5944300EC008F /* PCFollow.m in Sources */,
+				C7D661FA1AD592B800EC008F /* PCLike.m in Sources */,
 				6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */,
 				C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */,
 				C7666C9C1AD4995200F7F138 /* PCTabBarController.m in Sources */,
