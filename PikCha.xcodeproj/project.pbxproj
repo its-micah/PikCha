@@ -17,8 +17,8 @@
 		C71ADCBC1AD3204500190E51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCBA1AD3204500190E51 /* LaunchScreen.xib */; };
 		C71ADCC81AD3204500190E51 /* PikChaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCC71AD3204500190E51 /* PikChaTests.m */; };
 		C75447B31AD5DA8700C67939 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75447B21AD5DA8700C67939 /* CoreLocation.framework */; };
-		C75447B81AD5DAEE00C67939 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C75447B51AD5DAEE00C67939 /* SSKeychain.m */; };
-		C75447B91AD5DAEE00C67939 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C75447B71AD5DAEE00C67939 /* SSKeychainQuery.m */; };
+		C75447BE1AD5E42500C67939 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C75447BB1AD5E42500C67939 /* SSKeychain.m */; };
+		C75447BF1AD5E42500C67939 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C75447BD1AD5E42500C67939 /* SSKeychainQuery.m */; };
 		C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C951AD477FE00F7F138 /* PCSearchViewController.m */; };
 		C7666C991AD4782800F7F138 /* PCLikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C981AD4782800F7F138 /* PCLikesViewController.m */; };
 		C7666C9C1AD4995200F7F138 /* PCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C9B1AD4995200F7F138 /* PCTabBarController.m */; };
@@ -80,10 +80,10 @@
 		C71ADCC61AD3204500190E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71ADCC71AD3204500190E51 /* PikChaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PikChaTests.m; sourceTree = "<group>"; };
 		C75447B21AD5DA8700C67939 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C75447B41AD5DAEE00C67939 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = "../../../Downloads/Archive (2)/SSKeychain.h"; sourceTree = "<group>"; };
-		C75447B51AD5DAEE00C67939 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = "../../../Downloads/Archive (2)/SSKeychain.m"; sourceTree = "<group>"; };
-		C75447B61AD5DAEE00C67939 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychainQuery.h; path = "../../../Downloads/Archive (2)/SSKeychainQuery.h"; sourceTree = "<group>"; };
-		C75447B71AD5DAEE00C67939 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychainQuery.m; path = "../../../Downloads/Archive (2)/SSKeychainQuery.m"; sourceTree = "<group>"; };
+		C75447BA1AD5E42500C67939 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		C75447BB1AD5E42500C67939 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		C75447BC1AD5E42500C67939 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		C75447BD1AD5E42500C67939 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		C7666C941AD477FE00F7F138 /* PCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCSearchViewController.h; path = PikCha/Controller/PCSearchViewController.h; sourceTree = "<group>"; };
 		C7666C951AD477FE00F7F138 /* PCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCSearchViewController.m; path = PikCha/Controller/PCSearchViewController.m; sourceTree = "<group>"; };
 		C7666C971AD4782800F7F138 /* PCLikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLikesViewController.h; sourceTree = "<group>"; };
@@ -269,12 +269,12 @@
 		C71ADCAB1AD3204500190E51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C75447B41AD5DAEE00C67939 /* SSKeychain.h */,
-				C75447B51AD5DAEE00C67939 /* SSKeychain.m */,
-				C75447B61AD5DAEE00C67939 /* SSKeychainQuery.h */,
-				C75447B71AD5DAEE00C67939 /* SSKeychainQuery.m */,
 				C71ADCAC1AD3204500190E51 /* Info.plist */,
 				C71ADCAD1AD3204500190E51 /* main.m */,
+				C75447BA1AD5E42500C67939 /* SSKeychain.h */,
+				C75447BB1AD5E42500C67939 /* SSKeychain.m */,
+				C75447BC1AD5E42500C67939 /* SSKeychainQuery.h */,
+				C75447BD1AD5E42500C67939 /* SSKeychainQuery.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -418,8 +418,8 @@
 				6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */,
 				C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */,
 				F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */,
-				C75447B81AD5DAEE00C67939 /* SSKeychain.m in Sources */,
-				C75447B91AD5DAEE00C67939 /* SSKeychainQuery.m in Sources */,
+				C75447BE1AD5E42500C67939 /* SSKeychain.m in Sources */,
+				C75447BF1AD5E42500C67939 /* SSKeychainQuery.m in Sources */,
 				C7D661FD1AD5933300EC008F /* PCHashtag.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
