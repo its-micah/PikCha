@@ -9,6 +9,7 @@
 #import "PCLoginViewController.h"
 #import "PCUser.h"
 #import "PCProfileInfoTableViewController.h"
+#import "SSKeychain.h"
 
 @interface PCLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -31,14 +32,9 @@
     [self.user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             NSLog(@"Yay!");
+            [SSKeychain setPassword:self.user.username forService:@"PikChaUser" account:@"username"];
+            [SSKeychain setPassword:self.user.password forService:@"PikCha" account:self.user.username];
             [self performSegueWithIdentifier:@"ProfileInfoSegue" sender:nil];
-//           self.target = [self.storyboard instantiateViewControllerWithIdentifier:@"ProfileTableViewController"];
-//            UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:self.target];
-//            navVC.title = @"Edit Your Profile!";
-//            navVC.navigationItem.rightBarButtonItem = UIBarButtonItemStylePlain;
-//            [self presentViewController:self.target animated:YES completion:nil];
-
-            
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"WOAH NOW" message:@"You don't have an account" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alertView show];
@@ -50,8 +46,15 @@
 }
 
 - (IBAction)onLoginTapped:(id)sender {
+
+    self.password = self.passwordTextField.text;
+
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
         if (user) {
+            [SSKeychain setPassword:user.username forService:@"PikChaUser" account:@"username"];
+            [SSKeychain setPassword:self.password forService:@"PikCha" account:user.username];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            self.password = @"";
             //go to user feed
             NSLog(@"HI %@", user.username);
         } else {

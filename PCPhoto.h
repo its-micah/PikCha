@@ -7,6 +7,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "PCUser.h"
 
 @interface PCPhoto : PFObject <PFSubclassing>
 
@@ -20,6 +21,7 @@
 @property PFFile *originalImage;
 @property PFFile *thumbnailImage;
 @property NSSet *tags;
+@property PCUser *user;
 @property int likes;
 
 

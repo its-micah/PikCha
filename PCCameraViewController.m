@@ -76,6 +76,7 @@
     photo.photoID = @"3333";
     photo.comment = @"Nice waterfalls";
     photo.username = user.username;
+    photo.user = user;
     [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved a Photo");

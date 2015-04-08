@@ -20,6 +20,7 @@
 @dynamic thumbnailImage;
 @dynamic likes;
 @dynamic tags;
+@dynamic user;
 
 
 

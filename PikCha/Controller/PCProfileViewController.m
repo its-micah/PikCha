@@ -10,7 +10,7 @@
 #import "PCUserProfileCollectionViewCell.h"
 #import "PCPhoto.h"
 
-@interface PCProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PCProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
@@ -62,8 +62,13 @@
     }];
 
     return cell;
-    
+
 }
+
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    return CGSizeMake(120, 120);
+//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.userPhotoArray.count;

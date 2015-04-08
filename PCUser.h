@@ -15,7 +15,8 @@
 @property NSString *website;
 @property PFFile *profileImage;
 @property NSString *phoneNumber;
-@property NSString *gender; 
+@property NSString *gender;
+
 
 //+ (NSString *)parseClassName;
 

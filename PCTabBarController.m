@@ -7,6 +7,9 @@
 //
 
 #import "PCTabBarController.h"
+#import "PCLoginViewController.h"
+#import "SSKeychain.h"
+#import "SSKeychainQuery.h"
 #import <Parse/Parse.h>
 
 @interface PCTabBarController ()
@@ -19,17 +22,39 @@
     [super viewDidLoad];
     self.tabBar.tintColor = [UIColor blueColor];
 
-    [PFUser logInWithUsernameInBackground:@"a" password:@"a"
+   [self confirmUserLoggedIn];
+}
+
+- (void)confirmUserLoggedIn {
+
+    NSString *username = [SSKeychain passwordForService:@"PikChaUser" account:@"username"];
+    NSString *password = [SSKeychain passwordForService:@"PikCha" account:username];
+
+    // login user
+    if (password == nil) {
+        password = @"";
+        username = @"";
+    }
+
+    [PFUser logInWithUsernameInBackground:username password:password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
-                                            //self.user = user;
                                             NSLog(@"%@", @"Did log in");
                                         } else {
                                             NSLog(@"%@", @"Failed log in");
+                                            [self presentLoginScreen];
                                         }
                                     }];
 
+
+
 }
+
+- (void)presentLoginScreen {
+    PCLoginViewController *target = [self.storyboard instantiateViewControllerWithIdentifier:@"PCLoginTableViewController"];
+    [self presentViewController:target animated:YES completion:nil];
+}
+
 
 
 
