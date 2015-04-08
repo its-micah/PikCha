@@ -18,6 +18,8 @@
 		C71ADCC81AD3204500190E51 /* PikChaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCC71AD3204500190E51 /* PikChaTests.m */; };
 		C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C951AD477FE00F7F138 /* PCSearchViewController.m */; };
 		C7666C991AD4782800F7F138 /* PCLikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C981AD4782800F7F138 /* PCLikesViewController.m */; };
+		C7666C9C1AD4995200F7F138 /* PCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C9B1AD4995200F7F138 /* PCTabBarController.m */; };
+		C7666C9F1AD4A07600F7F138 /* PCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */; };
 		C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A1176D1AD43AF500444FF2 /* PCPhoto.m */; };
 		C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */; };
 		F3FA72D91AD3237D00E53992 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D31AD3237D00E53992 /* Bolts.framework */; };
@@ -71,6 +73,10 @@
 		C7666C951AD477FE00F7F138 /* PCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCSearchViewController.m; path = PikCha/Controller/PCSearchViewController.m; sourceTree = "<group>"; };
 		C7666C971AD4782800F7F138 /* PCLikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCLikesViewController.h; sourceTree = "<group>"; };
 		C7666C981AD4782800F7F138 /* PCLikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCLikesViewController.m; sourceTree = "<group>"; };
+		C7666C9A1AD4995200F7F138 /* PCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTabBarController.h; sourceTree = "<group>"; };
+		C7666C9B1AD4995200F7F138 /* PCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTabBarController.m; sourceTree = "<group>"; };
+		C7666C9D1AD4A07600F7F138 /* PCCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCameraViewController.h; sourceTree = "<group>"; };
+		C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCameraViewController.m; sourceTree = "<group>"; };
 		C7A1176C1AD43AF500444FF2 /* PCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPhoto.h; sourceTree = "<group>"; };
 		C7A1176D1AD43AF500444FF2 /* PCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPhoto.m; sourceTree = "<group>"; };
 		C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCLoginViewController.m; path = PikCha/PCLoginViewController.m; sourceTree = "<group>"; };
@@ -132,10 +138,12 @@
 		6B68FFED1AD333AA00A53032 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */,
-				C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */,
 				C71ADCAF1AD3204500190E51 /* AppDelegate.h */,
 				C71ADCB01AD3204500190E51 /* AppDelegate.m */,
+				C7666C9D1AD4A07600F7F138 /* PCCameraViewController.h */,
+				C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */,
+				C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */,
+				C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */,
 				6B68FFF31AD336B000A53032 /* PCFeedViewController.h */,
 				6B68FFF41AD336B000A53032 /* PCFeedViewController.m */,
 				C7666C971AD4782800F7F138 /* PCLikesViewController.h */,
@@ -146,6 +154,8 @@
 				F3FA72F71AD3552900E53992 /* PCProfileInfoTableViewController.m */,
 				C7666C941AD477FE00F7F138 /* PCSearchViewController.h */,
 				C7666C951AD477FE00F7F138 /* PCSearchViewController.m */,
+				C7666C9A1AD4995200F7F138 /* PCTabBarController.h */,
+				C7666C9B1AD4995200F7F138 /* PCTabBarController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 			files = (
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
+				C7666C9F1AD4A07600F7F138 /* PCCameraViewController.m in Sources */,
 				C7666C991AD4782800F7F138 /* PCLikesViewController.m in Sources */,
 				6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */,
 				C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */,
@@ -360,6 +371,7 @@
 				6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */,
 				6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */,
 				C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */,
+				C7666C9C1AD4995200F7F138 /* PCTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
