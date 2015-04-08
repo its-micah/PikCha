@@ -7,6 +7,8 @@
 //
 
 #import "PCCameraViewController.h"
+#import "PCUser.h"
+#import "PCPhoto.h"
 
 @interface PCCameraViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -62,15 +64,28 @@
 
 -(IBAction)takePicture:(id)sender{
 
-//    self.imagePicker = [UIImagePickerController new];
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    } else {
-//        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    }
-//    self.imagePicker.delegate = self;
-//
-//    [self presentViewController:self.imagePicker animated:YES completion:nil];
+
+    PCUser *user = (PCUser *)[PFUser currentUser];
+    PCPhoto *photo = [PCPhoto new];
+
+    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(200, 200)];
+
+    NSData *imageData2 = UIImagePNGRepresentation(myIcon2);
+    PFFile *imageFile2 = [PFFile fileWithName:@"image2.png" data:imageData2];
+    photo.originalImage = imageFile2;
+    photo.photoID = @"3333";
+    photo.comment = @"Nice waterfalls";
+    photo.username = user.username;
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Hooray! We're Saved a Photo");
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            NSLog(@"%@", error);
+        }
+        
+    }];
+
 }
 
 -(void)snapPicture{
@@ -106,43 +121,7 @@
 }
 
 - (IBAction)calledPictureController:(id)sender {
-//    self.toolBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-54, self.view.frame.size.width, 55)];
-//
-//    self.toolBar.barStyle = UIBarStyleBlackOpaque;
-//    NSArray *items=[NSArray arrayWithObjects:
-//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel  target:self action:@selector(cancelPicture)],
-//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
-//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:@selector(snapPicture)],
-//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
-//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction  target:self action:@selector(displayPhotoLibrary:)],
-//                    nil];
-//    [self.toolBar setItems:items];
-//
-//    // create the overlay view
-//    UIView *newView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44)];
-//
-//    // important - it needs to be transparent so the camera preview shows through!
-//    newView.opaque = NO;
-//    newView.backgroundColor = [UIColor clearColor];
-//
-//    // parent view for our overlay
-//    UIView *cameraView = [[UIView alloc] initWithFrame:self.view.bounds];
-//    [cameraView addSubview:newView];
-//    [cameraView addSubview:self.toolBar];
-//
-//    self.imagePickerController = [[UIImagePickerController alloc] init];
-//
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == NO){
-//        NSLog(@"Camera not available");
-//        return;
-//    }
-//
-//    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    self.imagePickerController.delegate = self;
-//    self.imagePickerController.showsCameraControls = NO;
-//    self.imagePickerController.allowsEditing = YES;
-//    [self.imagePickerController setCameraOverlayView:cameraView];
-//    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+
 }
 
 

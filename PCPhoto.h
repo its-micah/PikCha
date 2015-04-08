@@ -23,5 +23,7 @@
 @property int likes;
 
 
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
+
 
 @end
