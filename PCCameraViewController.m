@@ -9,18 +9,27 @@
 #import "PCCameraViewController.h"
 #import "PCUser.h"
 #import "PCPhoto.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface PCCameraViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface PCCameraViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property UIToolbar *toolBar;
 @property UIImagePickerController *imagePickerController;
+@property CLLocationManager *locationManager;
+@property CLLocation *userLocation;
 @end
 
 @implementation PCCameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.locationManager = [CLLocationManager new];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+
 
     self.toolBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-54, self.view.frame.size.width, 55)];
 
@@ -62,6 +71,19 @@
 
 }
 
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    for (CLLocation *location in locations) {
+        if (location.horizontalAccuracy < 10000 && location.verticalAccuracy < 10000) {
+            NSLog(@"Location Found!");
+            [self.locationManager stopUpdatingLocation];
+            self.userLocation = location;
+            break;
+        }
+    }
+
+}
+
 -(IBAction)takePicture:(id)sender{
 
 
@@ -77,6 +99,8 @@
     photo.comment = @"Nice waterfalls";
     photo.username = user.username;
     photo.user = user;
+    photo.photolocation.latitude = self.userLocation.coordinate.latitude;
+    photo.photolocation.longitude = self.userLocation.coordinate.longitude; 
     [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved a Photo");
