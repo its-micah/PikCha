@@ -22,6 +22,7 @@
 		C7666C9F1AD4A07600F7F138 /* PCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */; };
 		C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A1176D1AD43AF500444FF2 /* PCPhoto.m */; };
 		C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */; };
+		C7D661F41AD5859900EC008F /* PCUserProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */; };
 		F3FA72D91AD3237D00E53992 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D31AD3237D00E53992 /* Bolts.framework */; };
 		F3FA72DA1AD3237D00E53992 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D41AD3237D00E53992 /* Parse.framework */; };
 		F3FA72DB1AD3237D00E53992 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3FA72D51AD3237D00E53992 /* ParseCrashReporting.framework */; };
@@ -81,6 +82,8 @@
 		C7A1176D1AD43AF500444FF2 /* PCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPhoto.m; sourceTree = "<group>"; };
 		C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCLoginViewController.m; path = PikCha/PCLoginViewController.m; sourceTree = "<group>"; };
 		C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLoginViewController.h; path = PikCha/PCLoginViewController.h; sourceTree = "<group>"; };
+		C7D661F21AD5859900EC008F /* PCUserProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCUserProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCUserProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		F3FA72D31AD3237D00E53992 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		F3FA72D41AD3237D00E53992 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		F3FA72D51AD3237D00E53992 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				C7666C951AD477FE00F7F138 /* PCSearchViewController.m */,
 				C7666C9A1AD4995200F7F138 /* PCTabBarController.h */,
 				C7666C9B1AD4995200F7F138 /* PCTabBarController.m */,
+				C7D661F21AD5859900EC008F /* PCUserProfileCollectionViewCell.h */,
+				C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			files = (
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,
+				C7D661F41AD5859900EC008F /* PCUserProfileCollectionViewCell.m in Sources */,
 				C7666C9F1AD4A07600F7F138 /* PCCameraViewController.m in Sources */,
 				C7666C991AD4782800F7F138 /* PCLikesViewController.m in Sources */,
 				6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */,

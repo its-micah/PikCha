@@ -83,8 +83,8 @@
         } else {
             NSLog(@"%@", error);
         }
-        
     }];
+    //Segue to Feed VC
 
 }
 

@@ -296,10 +296,10 @@
                                     <rect key="frame" x="179" y="20" width="49" height="21"/>
                                 </variation>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5j-C2-B7b">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5j-C2-B7b">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eds-tZ-dY8">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eds-tZ-dY8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" red="0.69575093097516205" green="0.82931010811784223" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -307,20 +307,56 @@
                                             <constraint firstAttribute="width" constant="400" id="ucR-8y-2yO"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Reb-4J-ife">
-                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="itemSize" width="100" height="100"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YN6-Qm-Daj">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="CellID" id="YN6-Qm-Daj" customClass="PCUserProfileCollectionViewCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-bw-QGF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="n3Y-bw-QGF" secondAttribute="bottom" id="1ZT-T4-dPl"/>
+                                                    <constraint firstItem="n3Y-bw-QGF" firstAttribute="leading" secondItem="YN6-Qm-Daj" secondAttribute="leading" id="QdZ-cA-JBs"/>
+                                                    <constraint firstItem="n3Y-bw-QGF" firstAttribute="top" secondItem="YN6-Qm-Daj" secondAttribute="top" id="gqn-hX-0Fx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n3Y-bw-QGF" secondAttribute="trailing" id="rkY-Td-E21"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="subviews">
+                                                        <exclude reference="n3Y-bw-QGF"/>
+                                                    </mask>
+                                                    <mask key="constraints">
+                                                        <exclude reference="1ZT-T4-dPl"/>
+                                                        <exclude reference="QdZ-cA-JBs"/>
+                                                        <exclude reference="gqn-hX-0Fx"/>
+                                                        <exclude reference="rkY-Td-E21"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="subviews">
+                                                        <include reference="n3Y-bw-QGF"/>
+                                                    </mask>
+                                                    <mask key="constraints">
+                                                        <include reference="1ZT-T4-dPl"/>
+                                                        <include reference="QdZ-cA-JBs"/>
+                                                        <include reference="gqn-hX-0Fx"/>
+                                                        <include reference="rkY-Td-E21"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <outlet property="cellImageView" destination="n3Y-bw-QGF" id="zcD-AP-yzf"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                         <variation key="default">
@@ -335,6 +371,10 @@
                                                 <include reference="ucR-8y-2yO"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="dataSource" destination="qaP-ce-7Qt" id="Z6K-8P-dHB"/>
+                                            <outlet property="delegate" destination="qaP-ce-7Qt" id="HA4-f2-8J3"/>
+                                        </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-Ix-C0h">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -696,6 +736,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5sZ-ul-z9Q"/>
                     <connections>
+                        <outlet property="collectionView" destination="eds-tZ-dY8" id="b3e-4G-Or2"/>
                         <outlet property="followersLabel" destination="ruI-7I-LYt" id="SWc-TU-rBw"/>
                         <outlet property="followingLabel" destination="6iQ-MX-brI" id="fyn-0V-43X"/>
                         <outlet property="infoLabel" destination="Ysa-ex-hsu" id="NwG-El-Ja9"/>
