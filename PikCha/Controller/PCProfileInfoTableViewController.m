@@ -10,6 +10,7 @@
 #import "PCProfileViewController.h"
 #import <Parse/Parse.h>
 #import "PCUser.h"
+#import "PCPhoto.h"
 
 @interface PCProfileInfoTableViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -37,26 +38,25 @@
 
 
 - (IBAction)onDoneButtonTapped:(id)sender {
+    self.user = (PCUser *)[PFUser currentUser];
+
     self.user.fullName = self.profileNameTextField.text;
     self.user.website = self.websiteTextField.text;
-    NSLog(@"%@", self.user.website);
     self.user.bio = self.bioTextView.text;
     self.user.email = self.emailTextField.text;
     self.user.phoneNumber = self.phoneTextField.text;
     self.user.gender = self.genderTextField.text;
 
 
-    NSData *imageData = UIImagePNGRepresentation(self.profilePictureImageView.image);
+    UIImage *smallerImage = [PCPhoto imageWithImage:self.profilePictureImageView.image scaledToSize:CGSizeMake(75, 75)];
+    NSData *imageData = UIImagePNGRepresentation(smallerImage);
     PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-    [imageFile saveInBackground];
     self.user.profileImage = imageFile;
-
 
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved");
-            //THIS IS WHERE WE GOTTA PUSH // 
-            [self dismissViewControllerAnimated:YES completion:nil];
+            //[self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"%@", error);
         }

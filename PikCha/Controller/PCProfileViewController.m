@@ -25,7 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.profileImageView.layer.cornerRadius = 37.5;
+
     self.nameLabel.text = self.user.username;
+    self.user = (PCUser *)[PFUser currentUser];
 
     PFFile *userImageFile = self.user.profileImage;
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
