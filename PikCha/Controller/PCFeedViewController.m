@@ -60,6 +60,8 @@ UICollectionViewDelegateFlowLayout
         if (!error) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+
+            [self.feedArray removeAllObjects];
             // Do something with the found objects
             for (PCPhoto *object in objects) {
                 [self.feedArray addObject:object];
