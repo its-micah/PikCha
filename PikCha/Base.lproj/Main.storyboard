@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pOW-wS-TSQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pOW-wS-TSQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="ProfileTableViewController" id="E47-ub-CK7" customClass="PCProfileInfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="30" sectionFooterHeight="22" id="TCg-Nf-tRp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
@@ -285,7 +285,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Wbo-jc-jmN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wEs-Xc-jHh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oJ-G4-WYr">
@@ -774,7 +774,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a4n-uj-e3t"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="231-Xg-SZ8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="pKg-9m-wS6">
@@ -794,28 +794,7 @@
                                     </mask>
                                 </variation>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cE0-Zi-PZM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.67225142219215661" green="0.80814078977385395" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VyO-N4-IYa">
-                                    <size key="itemSize" width="100" height="100"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellID" id="eZE-zy-IiQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ts2-nP-e7i">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ts2-nP-e7i">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -836,32 +815,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ts2-nP-e7i" secondAttribute="trailing" constant="-16" id="1PZ-xo-QfP"/>
-                            <constraint firstItem="cE0-Zi-PZM" firstAttribute="leading" secondItem="231-Xg-SZ8" secondAttribute="leading" id="4s6-wV-DzC"/>
                             <constraint firstItem="pKg-9m-wS6" firstAttribute="leading" secondItem="231-Xg-SZ8" secondAttribute="leading" id="JwI-xz-Fmw"/>
                             <constraint firstItem="pKg-9m-wS6" firstAttribute="top" secondItem="g4k-Ux-dxu" secondAttribute="bottom" id="Kpt-PW-YBX"/>
                             <constraint firstItem="ts2-nP-e7i" firstAttribute="leading" secondItem="231-Xg-SZ8" secondAttribute="leadingMargin" constant="-16" id="OcA-v8-y8V"/>
                             <constraint firstAttribute="trailing" secondItem="pKg-9m-wS6" secondAttribute="trailing" id="Rz7-ie-LBd"/>
-                            <constraint firstItem="a4n-uj-e3t" firstAttribute="top" secondItem="cE0-Zi-PZM" secondAttribute="bottom" id="bCD-qx-cn9"/>
                             <constraint firstItem="ts2-nP-e7i" firstAttribute="top" secondItem="pKg-9m-wS6" secondAttribute="bottom" id="bec-eB-iTU"/>
-                            <constraint firstAttribute="trailing" secondItem="cE0-Zi-PZM" secondAttribute="trailing" id="dXn-5Q-gQa"/>
                             <constraint firstItem="a4n-uj-e3t" firstAttribute="top" secondItem="ts2-nP-e7i" secondAttribute="bottom" id="hVJ-IO-bQ3"/>
-                            <constraint firstItem="cE0-Zi-PZM" firstAttribute="top" secondItem="pKg-9m-wS6" secondAttribute="bottom" id="yzy-2h-lz1"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="pKg-9m-wS6"/>
-                                <exclude reference="cE0-Zi-PZM"/>
                                 <exclude reference="ts2-nP-e7i"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bCD-qx-cn9"/>
                                 <exclude reference="hVJ-IO-bQ3"/>
                                 <exclude reference="JwI-xz-Fmw"/>
                                 <exclude reference="Kpt-PW-YBX"/>
                                 <exclude reference="Rz7-ie-LBd"/>
-                                <exclude reference="4s6-wV-DzC"/>
-                                <exclude reference="dXn-5Q-gQa"/>
-                                <exclude reference="yzy-2h-lz1"/>
                                 <exclude reference="1PZ-xo-QfP"/>
                                 <exclude reference="OcA-v8-y8V"/>
                                 <exclude reference="bec-eB-iTU"/>
@@ -870,18 +840,13 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="pKg-9m-wS6"/>
-                                <include reference="cE0-Zi-PZM"/>
                                 <include reference="ts2-nP-e7i"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bCD-qx-cn9"/>
                                 <include reference="hVJ-IO-bQ3"/>
                                 <include reference="JwI-xz-Fmw"/>
                                 <include reference="Kpt-PW-YBX"/>
                                 <include reference="Rz7-ie-LBd"/>
-                                <include reference="4s6-wV-DzC"/>
-                                <include reference="dXn-5Q-gQa"/>
-                                <include reference="yzy-2h-lz1"/>
                                 <include reference="1PZ-xo-QfP"/>
                                 <include reference="OcA-v8-y8V"/>
                                 <include reference="bec-eB-iTU"/>
@@ -904,7 +869,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="pKg-9m-wS6" id="Tj6-oi-x8i"/>
-                        <outlet property="searchCollectionView" destination="cE0-Zi-PZM" id="MzT-2j-AZd"/>
                         <outlet property="searchTableView" destination="ts2-nP-e7i" id="B0I-5R-k96"/>
                         <outlet property="segmentedController" destination="8cD-dh-zw7" id="Uwd-a9-bkt"/>
                     </connections>
@@ -922,7 +886,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ba9-fI-YVk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bYF-kD-wDS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="owJ-ki-eAb">
@@ -991,12 +955,12 @@
                         <viewControllerLayoutGuide type="bottom" id="K5O-PW-8Xs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CUN-eC-5Jq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6gL-wN-UCS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.77265941038237584" green="0.75667338907470583" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xoa-gF-Qp0">
                                     <size key="itemSize" width="397" height="400"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1173,13 +1137,36 @@
                                                         <action selector="onCommentButtonTapped:" destination="yTD-6E-HrD" eventType="touchUpInside" id="AGA-AW-uAo"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-e9-H37">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="0rK-S6-veZ"/>
+                                                        <constraint firstAttribute="width" constant="50" id="kuA-wD-2sQ"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="0rK-S6-veZ"/>
+                                                            <exclude reference="kuA-wD-2sQ"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="0rK-S6-veZ"/>
+                                                            <include reference="kuA-wD-2sQ"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="6px-xw-1i7" firstAttribute="trailing" secondItem="yTD-6E-HrD" secondAttribute="trailingMargin" id="0Ud-Vg-HWZ"/>
+                                            <constraint firstAttribute="centerX" secondItem="DCk-e9-H37" secondAttribute="centerX" id="0a9-X0-jjh"/>
                                             <constraint firstAttribute="centerX" secondItem="KxB-pi-tZG" secondAttribute="centerX" id="0zw-4X-ZYf"/>
+                                            <constraint firstAttribute="centerY" secondItem="DCk-e9-H37" secondAttribute="centerY" id="12K-Ne-ofJ">
+                                                <variation key="widthClass=compact" constant="9"/>
+                                            </constraint>
                                             <constraint firstItem="te1-uq-HlL" firstAttribute="leading" secondItem="yTD-6E-HrD" secondAttribute="leadingMargin" id="AGw-nY-4Dv"/>
                                             <constraint firstItem="Iwc-hr-uy7" firstAttribute="leading" secondItem="bUP-Dn-aGE" secondAttribute="trailing" constant="8" id="Aco-jC-rtB"/>
                                             <constraint firstItem="bUP-Dn-aGE" firstAttribute="leading" secondItem="yTD-6E-HrD" secondAttribute="leadingMargin" id="BbO-3E-BgU"/>
@@ -1209,6 +1196,7 @@
                                                 <exclude reference="REk-25-u33"/>
                                                 <exclude reference="te1-uq-HlL"/>
                                                 <exclude reference="IjI-XB-GAP"/>
+                                                <exclude reference="DCk-e9-H37"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="0Ud-Vg-HWZ"/>
@@ -1223,6 +1211,8 @@
                                                 <exclude reference="JzB-6N-dam"/>
                                                 <exclude reference="T7S-wA-ldr"/>
                                                 <exclude reference="bG9-xh-lgh"/>
+                                                <exclude reference="0a9-X0-jjh"/>
+                                                <exclude reference="12K-Ne-ofJ"/>
                                                 <exclude reference="0zw-4X-ZYf"/>
                                                 <exclude reference="pcH-VG-34L"/>
                                                 <exclude reference="BbO-3E-BgU"/>
@@ -1240,6 +1230,7 @@
                                                 <include reference="REk-25-u33"/>
                                                 <include reference="te1-uq-HlL"/>
                                                 <include reference="IjI-XB-GAP"/>
+                                                <include reference="DCk-e9-H37"/>
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="0Ud-Vg-HWZ"/>
@@ -1254,6 +1245,8 @@
                                                 <include reference="JzB-6N-dam"/>
                                                 <include reference="T7S-wA-ldr"/>
                                                 <include reference="bG9-xh-lgh"/>
+                                                <include reference="0a9-X0-jjh"/>
+                                                <include reference="12K-Ne-ofJ"/>
                                                 <include reference="0zw-4X-ZYf"/>
                                                 <include reference="pcH-VG-34L"/>
                                                 <include reference="BbO-3E-BgU"/>
@@ -1265,6 +1258,7 @@
                                         <connections>
                                             <outlet property="cellImageView" destination="KxB-pi-tZG" id="OWs-uY-FWY"/>
                                             <outlet property="commentLabel" destination="te1-uq-HlL" id="9Su-iq-RnP"/>
+                                            <outlet property="likeImageView" destination="DCk-e9-H37" id="6r1-3P-4GC"/>
                                             <outlet property="likesLabel" destination="REk-25-u33" id="LhU-IY-GF0"/>
                                             <outlet property="timeStampLabel" destination="6px-xw-1i7" id="DJ7-cm-vqU"/>
                                             <outlet property="userImageView" destination="bUP-Dn-aGE" id="IE7-YD-0jo"/>
@@ -1339,10 +1333,11 @@
             <objects>
                 <tabBarController id="pOW-wS-TSQ" customClass="PCTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="m5y-Ur-bGc">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="m5y-Ur-bGc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="xfh-Ot-dOS" kind="relationship" relationship="viewControllers" id="Eoq-f6-7Ge"/>
@@ -1365,7 +1360,7 @@
                         <viewControllerLayoutGuide type="bottom" id="o4D-9e-9Ua"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dCp-Lh-c7D">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0gI-jG-q53">
@@ -1678,9 +1673,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb9-v6-cBc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="JBQ-Mo-w51"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Qd-Eb-dly">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2Qd-Eb-dly">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1697,9 +1693,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xfh-Ot-dOS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" id="jBg-wa-0Uo"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q4Y-X0-2uR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="q4Y-X0-2uR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1716,9 +1713,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mTC-SV-78f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="b3a-n6-x4L"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n6l-S9-eJD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="n6l-S9-eJD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1735,9 +1733,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KEu-RC-QwF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Likes" id="7XD-Xa-e0C"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TIf-GK-PoR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="TIf-GK-PoR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1749,6 +1748,9 @@
             <point key="canvasLocation" x="4072.5" y="1474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="29" height="29"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tpw-nv-fYA"/>
     </inferredMetricsTieBreakers>
