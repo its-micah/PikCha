@@ -864,6 +864,9 @@
                                 <segment title="Photos"/>
                                 <segment title="People"/>
                             </segments>
+                            <connections>
+                                <action selector="onSelectSegmentedControl:" destination="Iip-PF-60P" eventType="valueChanged" id="Lo3-08-iwe"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
@@ -1290,7 +1293,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gi5-Mo-JlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="o4Y-VP-81F"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="o4Y-VP-81F">
+                    <connections>
+                        <action selector="onPicDoubleTapped:" destination="G4O-Tb-fMD" id="ymQ-9e-yjv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4990.5" y="127"/>
         </scene>

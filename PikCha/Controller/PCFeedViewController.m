@@ -17,7 +17,8 @@
 <
 UICollectionViewDataSource,
 UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout
+UICollectionViewDelegateFlowLayout,
+UIGestureRecognizerDelegate
 >
 
 @property NSMutableArray *feedArray;
@@ -33,6 +34,7 @@ UICollectionViewDelegateFlowLayout
     [super viewDidLoad];
     self.feedArray = [NSMutableArray new];
     self.feedCollectionView.delegate = self;
+    
 
     PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
     //[query whereKey:@"username" equalTo:@"a"];
@@ -105,6 +107,24 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    PCLike *likeMe = [PCLike new];
+//
+//    PFUser *currentUser = [PFUser currentUser];
+//    likeMe.user = (PCUser *)currentUser;
+//    PCPhoto *photo = self.feedArray[indexPath.row];
+//    likeMe.photo = photo;
+//    likeMe.photoUser = photo.user;
+//
+//    [likeMe saveInBackground];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.feedArray.count;
+}
+
+- (IBAction)onPicDoubleTapped:(UITapGestureRecognizer *)sender {
+    CGPoint point = [sender locationInView:self.feedCollectionView];
+    NSIndexPath *indexPath = [self.feedCollectionView indexPathForItemAtPoint:point];
     PCLike *likeMe = [PCLike new];
 
     PFUser *currentUser = [PFUser currentUser];
@@ -112,12 +132,9 @@ UICollectionViewDelegateFlowLayout
     PCPhoto *photo = self.feedArray[indexPath.row];
     likeMe.photo = photo;
     likeMe.photoUser = photo.user;
+    NSLog(@"Hooray!! you liked me");
 
     [likeMe saveInBackground];
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.feedArray.count;
 }
 
 
