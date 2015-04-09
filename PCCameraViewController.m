@@ -44,6 +44,12 @@
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction  target:self action:@selector(displayPhotoLibrary:)],
                     nil];
+
+
+    for (UIBarButtonItem *button in items) {
+        button.
+    }
+
     [self.toolBar setItems:items];
 
     // create the overlay view
@@ -102,8 +108,11 @@
     photo.comment = @"Nice waterfalls";
     photo.username = user.username;
     photo.user = user;
-    photo.photolocation.latitude = self.userLocation.coordinate.latitude;
-    photo.photolocation.longitude = self.userLocation.coordinate.longitude; 
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        photo.photolocation = geoPoint;
+    }];
+//    photo.photolocation.latitude = self.userLocation.coordinate.latitude;
+//    photo.photolocation.longitude = self.userLocation.coordinate.longitude; 
     [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved a Photo");
