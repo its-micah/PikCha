@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    self.searchBar.delegate = self;
     self.searchResults = [NSMutableArray new];
 
 }
@@ -50,11 +50,12 @@
 
     if (self.segmentedController.selectedSegmentIndex == 0) {
 //Find People
-        PFQuery *query = [PFQuery queryWithClassName:@"PCUser"];
-        [query whereKey:@"username" equalTo:key];
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"username" hasPrefix:key];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
+                [self.searchResults removeAllObjects];
                 NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
                 // Do something with the found objects
                 for (PCUser *object in objects) {
