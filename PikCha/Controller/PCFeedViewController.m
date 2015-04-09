@@ -24,6 +24,7 @@ UIGestureRecognizerDelegate
 @property NSMutableArray *feedArray;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *feedCollectionView;
+@property UIRefreshControl *refreshControl;
 
 
 @end
@@ -34,24 +35,20 @@ UIGestureRecognizerDelegate
     [super viewDidLoad];
     self.feedArray = [NSMutableArray new];
     self.feedCollectionView.delegate = self;
-    
 
-    PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
-    //[query whereKey:@"username" equalTo:@"a"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PCPhoto *object in objects) {
-                [self.feedArray addObject:object];
-            }
-            [self.feedCollectionView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor colorWithRed:0.331 green:0.884 blue:1.000 alpha:1.000];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(loadPhotos) forControlEvents:UIControlEventValueChanged];
+    [self.feedCollectionView addSubview:self.refreshControl];
+    self.feedCollectionView.alwaysBounceVertical = YES;
+
+
+    [self loadPhotos];
+
+
 
 }
 
@@ -73,6 +70,28 @@ UIGestureRecognizerDelegate
 //            NSLog(@"Error: %@ %@", error, [error userInfo]);
 //        }
 //    }];
+}
+
+- (void)loadPhotos {
+    PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
+    //[query whereKey:@"username" equalTo:@"a"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PCPhoto *object in objects) {
+                [self.feedArray addObject:object];
+            }
+            [self.feedCollectionView reloadData];
+            if (self.refreshControl) {
+                [self.refreshControl endRefreshing];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,6 +126,8 @@ UIGestureRecognizerDelegate
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PCFeedCollectionViewCell *cell = (PCFeedCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+
     PCPhoto *photo = self.feedArray[indexPath.row];
     PFUser *currentUser = [PFUser currentUser];
 
@@ -127,7 +148,7 @@ UIGestureRecognizerDelegate
             likeMe.photoUser = photo.user;
             [likeMe saveInBackground];
             NSLog(@"Adding a Like");
-
+            [cell animateLike];
             //turn on like here
         }
         
@@ -137,6 +158,9 @@ UIGestureRecognizerDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.feedArray.count;
 }
+
+
+
 
 //- (IBAction)onPicDoubleTapped:(UITapGestureRecognizer *)sender {
 //    CGPoint point = [sender locationInView:self.feedCollectionView];

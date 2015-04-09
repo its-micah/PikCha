@@ -11,7 +11,6 @@
 @interface PCSearchViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
-@property (weak, nonatomic) IBOutlet UICollectionView *searchCollectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
