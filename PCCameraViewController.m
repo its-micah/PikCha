@@ -7,6 +7,7 @@
 //
 
 #import "PCCameraViewController.h"
+#import "PCFeedViewController.h"
 #import "PCUser.h"
 #import "PCPhoto.h"
 #import <CoreLocation/CoreLocation.h>
@@ -18,6 +19,8 @@
 @property UIImagePickerController *imagePickerController;
 @property CLLocationManager *locationManager;
 @property CLLocation *userLocation;
+@property PCFeedViewController *feedViewController;
+
 @end
 
 @implementation PCCameraViewController
@@ -90,7 +93,7 @@
     PCUser *user = (PCUser *)[PFUser currentUser];
     PCPhoto *photo = [PCPhoto new];
 
-    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(200, 200)];
+    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(225.0, 300.0)];
 
     NSData *imageData2 = UIImagePNGRepresentation(myIcon2);
     PFFile *imageFile2 = [PFFile fileWithName:@"image2.png" data:imageData2];
@@ -104,12 +107,13 @@
     [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved a Photo");
-            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"%@", error);
         }
     }];
     //Segue to Feed VC
+    [self.tabBarController setSelectedIndex:0];
+
 
 }
 

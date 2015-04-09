@@ -13,4 +13,13 @@
 @dynamic user;
 @dynamic photo;
 
+
++ (void)load {
+    [self registerSubclass];
+}
+
++(NSString *)parseClassName {
+    return @"PCLike";
+}
+
 @end

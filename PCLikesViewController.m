@@ -7,31 +7,49 @@
 //
 
 #import "PCLikesViewController.h"
+#import "PCLike.h"
+#import <Parse/Parse.h>
 
-@interface PCLikesViewController ()
-
+@interface PCLikesViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *likesTableView;
+@property NSMutableArray *likesArray;
 @end
 
 @implementation PCLikesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.likesTableView.delegate = self;
+
+    self.likesArray = [NSMutableArray new];
+    PFUser *currentUser = [PFUser currentUser];
+
+
+    PFQuery *query = [PFQuery queryWithClassName:@"PCLike"];
+    [query whereKey:@"user" equalTo:(PCUser *)currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (PCLike *like in objects) {
+            [self.likesArray addObject:like];
+            NSLog(@"%@", like.photo.comment);
+        }
+        [self.likesTableView reloadData];
+    }];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    //Fix this. Make it work.
+    cell.textLabel.text = [self.likesArray[indexPath.row] user];
+    
+    return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.likesArray.count;
 }
-*/
+
+
 
 @end

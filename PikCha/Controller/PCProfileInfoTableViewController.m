@@ -48,7 +48,7 @@
     self.user.gender = self.genderTextField.text;
 
 
-    UIImage *smallerImage = [PCPhoto imageWithImage:self.profilePictureImageView.image scaledToSize:CGSizeMake(75, 75)];
+    UIImage *smallerImage = [PCPhoto imageWithImage:self.profilePictureImageView.image scaledToSize:CGSizeMake(75, 100)];
     NSData *imageData = UIImagePNGRepresentation(smallerImage);
     PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
     self.user.profileImage = imageFile;
@@ -56,11 +56,12 @@
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved");
-            //[self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"%@", error);
         }
     }];
+
 }
 
 

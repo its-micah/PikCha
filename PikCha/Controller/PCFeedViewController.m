@@ -10,6 +10,7 @@
 #import "PCFeedCollectionViewCell.h"
 #import "PCPhoto.h"
 #import "PCUser.h"
+#import "PCLike.h"
 
 @interface PCFeedViewController ()
 
@@ -59,6 +60,8 @@ UICollectionViewDelegateFlowLayout
         if (!error) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+
+            [self.feedArray removeAllObjects];
             // Do something with the found objects
             for (PCPhoto *object in objects) {
                 [self.feedArray addObject:object];
@@ -87,18 +90,31 @@ UICollectionViewDelegateFlowLayout
         }
     }];
 
-
-    PCPhoto *photo = self.feedArray[indexPath.row];
-    PFFile *imageFile = photo.user.profileImage;
-    [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-        if (!error) {
-            cell.userImageView.image = [UIImage imageWithData:imageData];
-        }
-    }];
-
+    PCUser *user = (PCUser *)[PFUser currentUser];
+    if (user) {
+        PFFile *imageFile = user.profileImage;
+        [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                cell.userImageView.image = [UIImage imageWithData:imageData];
+            }
+        }];
+    }
 
     cell.usernameLabel.text = [self.feedArray[indexPath.row] username];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    PCLike *likeMe = [PCLike new];
+
+    PFUser *currentUser = [PFUser currentUser];
+    likeMe.user = (PCUser *)currentUser;
+    likeMe.photo = self.feedArray[indexPath.row];
+
+    [likeMe saveInBackground];
+
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
