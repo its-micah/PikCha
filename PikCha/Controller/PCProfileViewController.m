@@ -28,10 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadPhotos];
+    //[self loadPhotos];
 
     self.collectionView.delegate = self;
-    self.userPhotoArray = [NSMutableArray new];
+    //self.userPhotoArray = [NSMutableArray new];
 
     self.profileImageView.layer.cornerRadius = 37.5;
 
@@ -47,7 +47,7 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [self loadPhotos];
    }
 
@@ -75,6 +75,7 @@
 }
 
 - (void)loadPhotos {
+    self.userPhotoArray = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
     [query whereKey:@"username" equalTo:@"a"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

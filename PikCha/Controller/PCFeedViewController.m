@@ -88,13 +88,16 @@ UICollectionViewDelegateFlowLayout
     }];
 
 
-    PCPhoto *photo = self.feedArray[indexPath.row];
-    PFFile *imageFile = photo.user.profileImage;
-    [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-        if (!error) {
-            cell.userImageView.image = [UIImage imageWithData:imageData];
-        }
-    }];
+    PCUser *user = (PCUser *)[PFUser currentUser];
+    if (user) {
+        PFFile *imageFile = user.profileImage;
+        [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                cell.userImageView.image = [UIImage imageWithData:imageData];
+            }
+        }];
+    }
+
 
 
     cell.usernameLabel.text = [self.feedArray[indexPath.row] username];
