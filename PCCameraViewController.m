@@ -88,7 +88,7 @@
         }
     }];
     //Segue to Feed VC
-    [self showViewController:self.feedViewController sender:sender];
+    [self.tabBarController setSelectedIndex:0];
 
 
 }

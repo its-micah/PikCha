@@ -841,9 +841,59 @@
                     <view key="view" contentMode="scaleToFill" id="bYF-kD-wDS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="owJ-ki-eAb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" id="jaA-XA-52a">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jaA-XA-52a" id="A8Y-ER-ZF0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="w0P-2i-d1G" id="zac-TR-xfr"/>
+                                    <outlet property="delegate" destination="w0P-2i-d1G" id="TSM-pC-shL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="owJ-ki-eAb" firstAttribute="top" secondItem="bYF-kD-wDS" secondAttribute="topMargin" id="n9u-fo-HTa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="owJ-ki-eAb" secondAttribute="trailing" constant="-16" id="nYs-k0-eyf"/>
+                            <constraint firstItem="ba9-fI-YVk" firstAttribute="top" secondItem="owJ-ki-eAb" secondAttribute="bottom" id="pTp-zb-h9x"/>
+                            <constraint firstItem="owJ-ki-eAb" firstAttribute="leading" secondItem="bYF-kD-wDS" secondAttribute="leadingMargin" constant="-16" id="w7r-wo-G2Z"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="owJ-ki-eAb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="n9u-fo-HTa"/>
+                                <exclude reference="nYs-k0-eyf"/>
+                                <exclude reference="w7r-wo-G2Z"/>
+                                <exclude reference="pTp-zb-h9x"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="owJ-ki-eAb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="n9u-fo-HTa"/>
+                                <include reference="nYs-k0-eyf"/>
+                                <include reference="w7r-wo-G2Z"/>
+                                <include reference="pTp-zb-h9x"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bHf-yw-SbL"/>
+                    <connections>
+                        <outlet property="likesTableView" destination="owJ-ki-eAb" id="XPE-Wg-lGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANf-wr-9aG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -880,6 +930,7 @@
                                             <subviews>
                                                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KxB-pi-tZG">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="381" id="ewf-rR-w3h"/>
                                                         <constraint firstAttribute="height" constant="291" id="xvM-P5-2Wf"/>
@@ -896,6 +947,9 @@
                                                             <include reference="xvM-P5-2Wf"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="o4Y-VP-81F" appends="YES" id="ZAL-f4-2Du"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwc-hr-uy7">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -1189,6 +1243,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gi5-Mo-JlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="o4Y-VP-81F"/>
             </objects>
             <point key="canvasLocation" x="4990.5" y="127"/>
         </scene>
@@ -1533,6 +1588,7 @@
         <!--Profile-->
         <scene sceneID="wRu-2R-opK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snq-4R-2hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb9-v6-cBc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="JBQ-Mo-w51"/>
                     <toolbarItems/>
@@ -1545,13 +1601,13 @@
                         <segue destination="qaP-ce-7Qt" kind="relationship" relationship="rootViewController" id="3z6-8e-Rdk"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="snq-4R-2hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4072.5" y="-558"/>
         </scene>
         <!--Feed-->
         <scene sceneID="meF-nT-xXS">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SI9-FS-F4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xfh-Ot-dOS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" id="jBg-wa-0Uo"/>
                     <toolbarItems/>
@@ -1564,13 +1620,13 @@
                         <segue destination="G4O-Tb-fMD" kind="relationship" relationship="rootViewController" id="bUq-io-v5O"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SI9-FS-F4q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4072.5" y="127"/>
         </scene>
         <!--Search-->
         <scene sceneID="iJu-uX-HqX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dv-TF-U4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mTC-SV-78f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="b3a-n6-x4L"/>
                     <toolbarItems/>
@@ -1583,13 +1639,13 @@
                         <segue destination="Iip-PF-60P" kind="relationship" relationship="rootViewController" id="tYa-KT-D3L"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dv-TF-U4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4072.5" y="789"/>
         </scene>
         <!--Likes-->
         <scene sceneID="iMv-ao-ICJ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UI6-h6-Oah" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KEu-RC-QwF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Likes" id="7XD-Xa-e0C"/>
                     <toolbarItems/>
@@ -1602,7 +1658,6 @@
                         <segue destination="w0P-2i-d1G" kind="relationship" relationship="rootViewController" id="t4C-Bf-4tC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UI6-h6-Oah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4072.5" y="1474"/>
         </scene>
