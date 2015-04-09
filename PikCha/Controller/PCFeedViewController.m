@@ -107,6 +107,40 @@ UIGestureRecognizerDelegate
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    PCPhoto *photo = self.feedArray[indexPath.row];
+    PFUser *currentUser = [PFUser currentUser];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"PCLike"];
+    [query whereKey:@"photo" equalTo:photo];
+    [query whereKey:@"user" equalTo:(PFUser *)currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count > 0) {
+            PCLike *like = objects.firstObject;
+            [like deleteInBackground];
+            NSLog(@"Deleting a Like");
+
+            // turn off like here
+        } else {
+            PCLike *likeMe = [PCLike new];
+            likeMe.user = (PCUser *)currentUser;
+            likeMe.photo = photo;
+            likeMe.photoUser = photo.user;
+            [likeMe saveInBackground];
+            NSLog(@"Adding a Like");
+
+            //turn on like here
+        }
+        
+    }];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.feedArray.count;
+}
+
+//- (IBAction)onPicDoubleTapped:(UITapGestureRecognizer *)sender {
+//    CGPoint point = [sender locationInView:self.feedCollectionView];
+//    NSIndexPath *indexPath = [self.feedCollectionView indexPathForItemAtPoint:point];
 //    PCLike *likeMe = [PCLike new];
 //
 //    PFUser *currentUser = [PFUser currentUser];
@@ -114,28 +148,10 @@ UIGestureRecognizerDelegate
 //    PCPhoto *photo = self.feedArray[indexPath.row];
 //    likeMe.photo = photo;
 //    likeMe.photoUser = photo.user;
+//    NSLog(@"Hooray!! you liked me");
 //
 //    [likeMe saveInBackground];
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.feedArray.count;
-}
-
-- (IBAction)onPicDoubleTapped:(UITapGestureRecognizer *)sender {
-    CGPoint point = [sender locationInView:self.feedCollectionView];
-    NSIndexPath *indexPath = [self.feedCollectionView indexPathForItemAtPoint:point];
-    PCLike *likeMe = [PCLike new];
-
-    PFUser *currentUser = [PFUser currentUser];
-    likeMe.user = (PCUser *)currentUser;
-    PCPhoto *photo = self.feedArray[indexPath.row];
-    likeMe.photo = photo;
-    likeMe.photoUser = photo.user;
-    NSLog(@"Hooray!! you liked me");
-
-    [likeMe saveInBackground];
-}
+//}
 
 
 
