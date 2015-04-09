@@ -46,9 +46,9 @@
                     nil];
 
 
-    for (UIBarButtonItem *button in items) {
-        button.
-    }
+//    for (UIBarButtonItem *button in items) {
+//        button.
+//    }
 
     [self.toolBar setItems:items];
 

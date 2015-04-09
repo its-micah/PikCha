@@ -54,23 +54,23 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
-    //[query whereKey:@"username" equalTo:@"a"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
-
-            [self.feedArray removeAllObjects];
-            // Do something with the found objects
-            for (PCPhoto *object in objects) {
-                [self.feedArray addObject:object];
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
+//    //[query whereKey:@"username" equalTo:@"a"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
+//
+//            [self.feedArray removeAllObjects];
+//            // Do something with the found objects
+//            for (PCPhoto *object in objects) {
+//                [self.feedArray addObject:object];
+//            }
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
