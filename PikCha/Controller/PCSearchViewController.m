@@ -9,6 +9,7 @@
 #import "PCSearchViewController.h"
 #import "PCPhoto.h"
 #import "PCUser.h"
+#import "PCHashtag.h"
 
 @interface PCSearchViewController ()
 <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate >
@@ -26,6 +27,8 @@
     // Do any additional setup after loading the view.
     self.searchBar.delegate = self;
     self.searchResults = [NSMutableArray new];
+    self.searchBar.placeholder = @"Find People";
+
 
 }
 
@@ -33,10 +36,10 @@
 
     switch (sender.selectedSegmentIndex) {
         case 0: //show people
-            self.searchBar.placeholder = @"Find Users";
+            self.searchBar.placeholder = @"Find People";
             break;
         case 1: //show hashtags
-            self.searchBar.placeholder = @"Find Hashtags";
+            self.searchBar.placeholder = @"Find HashTags";
             break;
         default:
             break;
@@ -47,15 +50,16 @@
 #pragma mark - Query
 
 -(void)searchQuery:(NSString *)key{
-
+    if ([key isEqualToString:@""]) { return; }
     if (self.segmentedController.selectedSegmentIndex == 0) {
 //Find People
         PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-        [query whereKey:@"username" hasPrefix:key];
+        [query whereKeyExists:@"fullName"];
+        [query whereKey:@"fullName" matchesRegex:key modifiers:@"i"];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
-                [self.searchResults removeAllObjects];
+                self.searchResults = [NSMutableArray new];
                 NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
                 // Do something with the found objects
                 for (PCUser *object in objects) {
@@ -68,15 +72,31 @@
             }
             [self.searchTableView reloadData];
         }];
+    } else {
+
+        NSMutableSet *uniqueHashTags = [NSMutableSet new];
+
+        PFQuery *query = [PFQuery queryWithClassName:@"PCHashtag"];
+        [query whereKeyExists:@"hashTag"];
+        [query whereKey:@"hashTag" matchesRegex:key modifiers:@"i"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count > 0) {
+                for (PCHashtag *hashtag in objects) {
+                    [uniqueHashTags addObject:hashtag.hashTag];
+                    // this will be where you add photos to an array then reload
+                    NSLog(@"%@", hashtag.hashTag);
+                    NSLog(@"unique count %lu", uniqueHashTags.count);
+                }
+                NSLog(@"HashTags for hashtag search: %lu", (unsigned long)objects.count);
+                self.searchResults = uniqueHashTags.allObjects;
+                [self.searchTableView reloadData];
+            } else {
+                NSLog(@"No hash tags for this search");
+            }
+        }];
     }
-
-    else{
-        //find hashtags
-        [self.searchResults addObject:key];
-    }
-
-
 }
+
 #pragma mark - Table View Functions
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -90,12 +110,22 @@
 
     if(self.segmentedController.selectedSegmentIndex == 0){
     PCUser *user = self.searchResults[indexPath.row];
-        cell.textLabel.text = user.username;
+        cell.textLabel.text = user.fullName;
+        cell.detailTextLabel.text = user.username;
     }
 
     else{
-        cell.textLabel.text = self.searchResults[indexPath.row];
-        cell.detailTextLabel.text = @"We Looking For Those Hashtags Homie";
+        cell.textLabel.text = [NSString stringWithFormat:@"#%@", self.searchResults[indexPath.row]];
+
+
+        NSString *searchText = self.searchResults[indexPath.row];
+        PFQuery *query = [PFQuery queryWithClassName:@"PCHashtag"];
+        [query whereKey:@"hashTag" equalTo:searchText];
+        [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+            // set the cell value here
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%i", number];
+            NSLog(@"Count of HashTag (%@): %i", searchText, number);
+        }];
     }
 
     return cell;

@@ -232,7 +232,6 @@
 		C71ADC9F1AD3204400190E51 = {
 			isa = PBXGroup;
 			children = (
-				C75447B21AD5DA8700C67939 /* CoreLocation.framework */,
 				6B68FFEF1AD333B900A53032 /* Model */,
 				6B68FFEE1AD333B100A53032 /* View */,
 				6B68FFED1AD333AA00A53032 /* Controller */,
@@ -257,6 +256,7 @@
 			children = (
 				F3FA72F11AD3244400E53992 /* libsqlite3.dylib */,
 				F3FA72EF1AD3243900E53992 /* libz.dylib */,
+				C75447B21AD5DA8700C67939 /* CoreLocation.framework */,
 				F3FA72ED1AD3242F00E53992 /* SystemConfiguration.framework */,
 				F3FA72EB1AD3242700E53992 /* StoreKit.framework */,
 				F3FA72E91AD3241F00E53992 /* Security.framework */,
@@ -363,10 +363,11 @@
 				TargetAttributes = {
 					C71ADCA71AD3204400190E51 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = NUN6ZLGGLC;
+						DevelopmentTeam = QGEUNUGB27;
 					};
 					C71ADCC01AD3204500190E51 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QGEUNUGB27;
 						TestTargetID = C71ADCA71AD3204400190E51;
 					};
 				};
