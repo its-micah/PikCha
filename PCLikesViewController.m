@@ -25,9 +25,8 @@
     self.likesArray = [NSMutableArray new];
     PFUser *currentUser = [PFUser currentUser];
 
-
     PFQuery *query = [PFQuery queryWithClassName:@"PCLike"];
-    [query whereKey:@"user" equalTo:(PCUser *)currentUser];
+    [query whereKey:@"photoUser" equalTo:(PFUser *)currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PCLike *like in objects) {
             [self.likesArray addObject:like];
@@ -41,7 +40,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     //Fix this. Make it work.
-    cell.textLabel.text = [self.likesArray[indexPath.row] user];
+    PCLike *pcLike = self.likesArray[indexPath.row];
+
+    NSDateFormatter* dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy"];
+    NSString *likeTime = [dateFormatter stringFromDate:pcLike.createdAt];
+
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ liked this on %@", pcLike.user.username, likeTime];
     
     return cell;
 }

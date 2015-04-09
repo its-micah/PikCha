@@ -105,16 +105,15 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
     PCLike *likeMe = [PCLike new];
 
     PFUser *currentUser = [PFUser currentUser];
     likeMe.user = (PCUser *)currentUser;
-    likeMe.photo = self.feedArray[indexPath.row];
+    PCPhoto *photo = self.feedArray[indexPath.row];
+    likeMe.photo = photo;
+    likeMe.photoUser = photo.user;
 
     [likeMe saveInBackground];
-
-
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

@@ -11,7 +11,9 @@
 @implementation PCLike
 
 @dynamic user;
+@dynamic photoUser;
 @dynamic photo;
+
 
 
 + (void)load {

@@ -14,5 +14,6 @@
 
 @property PCPhoto *photo;
 @property PCUser *user;
+@property PCUser *photoUser;
 
 @end
