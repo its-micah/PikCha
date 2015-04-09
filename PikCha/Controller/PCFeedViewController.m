@@ -10,6 +10,7 @@
 #import "PCFeedCollectionViewCell.h"
 #import "PCPhoto.h"
 #import "PCUser.h"
+#import "PCLike.h"
 
 @interface PCFeedViewController ()
 
@@ -87,7 +88,6 @@ UICollectionViewDelegateFlowLayout
         }
     }];
 
-
     PCUser *user = (PCUser *)[PFUser currentUser];
     if (user) {
         PFFile *imageFile = user.profileImage;
@@ -98,10 +98,21 @@ UICollectionViewDelegateFlowLayout
         }];
     }
 
-
-
     cell.usernameLabel.text = [self.feedArray[indexPath.row] username];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    PCLike *likeMe = [PCLike new];
+
+    PFUser *currentUser = [PFUser currentUser];
+    likeMe.user = (PCUser *)currentUser;
+    likeMe.photo = self.feedArray[indexPath.row];
+
+    [likeMe saveInBackground];
+
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

@@ -68,7 +68,7 @@
     PCUser *user = (PCUser *)[PFUser currentUser];
     PCPhoto *photo = [PCPhoto new];
 
-    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(200, 200)];
+    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(225.0, 300.0)];
 
     NSData *imageData2 = UIImagePNGRepresentation(myIcon2);
     PFFile *imageFile2 = [PFFile fileWithName:@"image2.png" data:imageData2];
