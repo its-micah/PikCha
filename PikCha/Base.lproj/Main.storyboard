@@ -878,7 +878,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="397" height="420"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Elton John" translatesAutoresizingMaskIntoConstraints="NO" id="KxB-pi-tZG">
+                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KxB-pi-tZG">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="381" id="ewf-rR-w3h"/>
@@ -1607,9 +1607,6 @@
             <point key="canvasLocation" x="4072.5" y="1474"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Elton John" width="250" height="250"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tpw-nv-fYA"/>
     </inferredMetricsTieBreakers>

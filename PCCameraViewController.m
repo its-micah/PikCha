@@ -7,6 +7,7 @@
 //
 
 #import "PCCameraViewController.h"
+#import "PCFeedViewController.h"
 #import "PCUser.h"
 #import "PCPhoto.h"
 
@@ -15,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property UIToolbar *toolBar;
 @property UIImagePickerController *imagePickerController;
+@property PCFeedViewController *feedViewController;
+
 @end
 
 @implementation PCCameraViewController
@@ -80,12 +83,13 @@
     [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved a Photo");
-            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSLog(@"%@", error);
         }
     }];
     //Segue to Feed VC
+    [self showViewController:self.feedViewController sender:sender];
+
 
 }
 
