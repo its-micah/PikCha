@@ -10,6 +10,7 @@
 #import "PCFeedViewController.h"
 #import "PCUser.h"
 #import "PCPhoto.h"
+#import "PCHashtag.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface PCCameraViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
@@ -17,9 +18,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property UIToolbar *toolBar;
 @property UIImagePickerController *imagePickerController;
-@property CLLocationManager *locationManager;
+@property (strong) CLLocationManager *locationManager;
 @property CLLocation *userLocation;
 @property PCFeedViewController *feedViewController;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextField;
+@property BOOL readyForNewPic;
 
 @end
 
@@ -28,6 +31,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self loadCamera];
+    self.readyForNewPic = NO;
+}
+
+
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    if (self.readyForNewPic) {
+        [self loadCamera];
+        self.readyForNewPic = NO;
+        self.commentTextField.text = @"";
+    }
+}
+
+
+- (void)loadCamera {
     self.locationManager = [CLLocationManager new];
     [self.locationManager requestWhenInUseAuthorization];
     self.locationManager.delegate = self;
@@ -44,11 +64,6 @@
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction  target:self action:@selector(displayPhotoLibrary:)],
                     nil];
-
-
-//    for (UIBarButtonItem *button in items) {
-//        button.
-//    }
 
     [self.toolBar setItems:items];
 
@@ -78,7 +93,9 @@
     [self.imagePickerController setCameraOverlayView:cameraView];
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
 
+
 }
+
 
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
@@ -104,26 +121,48 @@
     NSData *imageData2 = UIImagePNGRepresentation(myIcon2);
     PFFile *imageFile2 = [PFFile fileWithName:@"image2.png" data:imageData2];
     photo.originalImage = imageFile2;
-    photo.photoID = @"3333";
-    photo.comment = @"Nice waterfalls";
+    photo.comment = self.commentTextField.text;
     photo.username = user.username;
     photo.user = user;
-    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-        photo.photolocation = geoPoint;
-    }];
-//    photo.photolocation.latitude = self.userLocation.coordinate.latitude;
-//    photo.photolocation.longitude = self.userLocation.coordinate.longitude; 
+//    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+////        photo.photolocation = geoPoint;
+//
+//    }];
+    PFGeoPoint *geopoint = [PFGeoPoint geoPointWithLocation:self.userLocation];
+    photo.photolocation = geopoint;
+    NSLog(@"%f", photo.photolocation.latitude);
     [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Hooray! We're Saved a Photo");
+            NSString *hashTest = self.commentTextField.text;
+
+            NSError *error = nil;
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"#(\\w+)" options:0 error:&error];
+            NSArray *matches = [regex matchesInString:hashTest options:0 range:NSMakeRange(0, hashTest.length)];
+            for (NSTextCheckingResult *match in matches) {
+                NSRange wordRange = [match rangeAtIndex:1];
+                NSString* word = [hashTest substringWithRange:wordRange];
+                NSLog(@"Found tag %@", word);
+
+                //photo(to be hash tagged on) user(who is writing the hash tag) string(the hash tag)
+                PFUser *currentUser = [PFUser currentUser];
+                PCHashtag *hashTag = [PCHashtag new];
+                hashTag.user = (PCUser *)currentUser;
+                hashTag.photo = photo;
+                hashTag.hashTag = word;
+                [hashTag saveInBackgroundWithBlock:nil];
+            }
         } else {
             NSLog(@"%@", error);
         }
     }];
+
+    self.readyForNewPic = YES;
+
+
+
     //Segue to Feed VC
     [self.tabBarController setSelectedIndex:0];
-
-
 }
 
 -(void)snapPicture{

@@ -24,6 +24,7 @@
 		C7666C9C1AD4995200F7F138 /* PCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C9B1AD4995200F7F138 /* PCTabBarController.m */; };
 		C7666C9F1AD4A07600F7F138 /* PCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */; };
 		C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A1176D1AD43AF500444FF2 /* PCPhoto.m */; };
+		C7A25E6C1AD727E0005C05A5 /* PCCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A25E6B1AD727E0005C05A5 /* PCCollectionReusableView.m */; };
 		C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */; };
 		C7D661F41AD5859900EC008F /* PCUserProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */; };
 		C7D661F71AD5923900EC008F /* PCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D661F61AD5923900EC008F /* PCComment.m */; };
@@ -94,6 +95,8 @@
 		C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCameraViewController.m; sourceTree = "<group>"; };
 		C7A1176C1AD43AF500444FF2 /* PCPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPhoto.h; sourceTree = "<group>"; };
 		C7A1176D1AD43AF500444FF2 /* PCPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPhoto.m; sourceTree = "<group>"; };
+		C7A25E6A1AD727E0005C05A5 /* PCCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCCollectionReusableView.h; sourceTree = "<group>"; };
+		C7A25E6B1AD727E0005C05A5 /* PCCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCollectionReusableView.m; sourceTree = "<group>"; };
 		C7B787DD1AD3432E006EEBC9 /* PCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCLoginViewController.m; path = PikCha/PCLoginViewController.m; sourceTree = "<group>"; };
 		C7B787DE1AD3432E006EEBC9 /* PCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLoginViewController.h; path = PikCha/PCLoginViewController.h; sourceTree = "<group>"; };
 		C7D661F21AD5859900EC008F /* PCUserProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCUserProfileCollectionViewCell.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				C71ADCB01AD3204500190E51 /* AppDelegate.m */,
 				C7666C9D1AD4A07600F7F138 /* PCCameraViewController.h */,
 				C7666C9E1AD4A07600F7F138 /* PCCameraViewController.m */,
+				C7A25E6A1AD727E0005C05A5 /* PCCollectionReusableView.h */,
+				C7A25E6B1AD727E0005C05A5 /* PCCollectionReusableView.m */,
 				C7D662041AD5B45900EC008F /* PCFeedCollectionViewCell.h */,
 				C7D662051AD5B45900EC008F /* PCFeedCollectionViewCell.m */,
 				6B68FFF31AD336B000A53032 /* PCFeedViewController.h */,
@@ -358,6 +363,7 @@
 				TargetAttributes = {
 					C71ADCA71AD3204400190E51 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = NUN6ZLGGLC;
 					};
 					C71ADCC01AD3204500190E51 = {
 						CreatedOnToolsVersion = 6.2;
@@ -409,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A25E6C1AD727E0005C05A5 /* PCCollectionReusableView.m in Sources */,
 				C7D661F71AD5923900EC008F /* PCComment.m in Sources */,
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
 				C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */,

@@ -13,4 +13,12 @@
 @dynamic follower;
 @dynamic following;
 
++ (void)load {
+    [self registerSubclass];
+}
+
++(NSString *)parseClassName {
+    return @"PCFollow";
+}
+
 @end

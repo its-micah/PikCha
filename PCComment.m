@@ -14,4 +14,14 @@
 @dynamic user;
 @dynamic comment;
 
++ (void)load {
+    [self registerSubclass];
+}
+
++(NSString *)parseClassName {
+    return @"PCComment";
+}
+
+
+
 @end

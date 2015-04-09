@@ -9,7 +9,7 @@
 #import <Parse/Parse.h>
 #import "PCUser.h"
 
-@interface PCFollow : PFObject
+@interface PCFollow : PFObject <PFSubclassing>
 
 @property PCUser *follower;
 @property PCUser *following;

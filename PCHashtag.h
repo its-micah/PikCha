@@ -10,9 +10,10 @@
 #import "PCUser.h"
 #import "PCPhoto.h"
 
-@interface PCHashtag : PFObject
+@interface PCHashtag : PFObject <PFSubclassing>
 
 @property PCUser *user;
 @property PCPhoto *photo;
+@property NSString *hashTag;
 
 @end

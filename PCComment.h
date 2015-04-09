@@ -10,7 +10,7 @@
 #import "PCUser.h"
 #import "PCPhoto.h"
 
-@interface PCComment : PFObject
+@interface PCComment : PFObject <PFSubclassing>
 
 @property PCPhoto *photo;
 @property PCUser *user;

@@ -46,8 +46,16 @@
     [dateFormatter setDateFormat:@"MMM dd, yyyy"];
     NSString *likeTime = [dateFormatter stringFromDate:pcLike.createdAt];
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ liked this on %@", pcLike.user.username, likeTime];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ liked this at %@", pcLike.user.username, likeTime];
     
+    PFFile *imageFile = [pcLike.photo originalImage];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            cell.imageView.image = [UIImage imageWithData:imageData];
+            [cell layoutSubviews];
+        }
+    }];
+
     return cell;
 }
 

@@ -8,6 +8,7 @@
 
 #import "PCFeedViewController.h"
 #import "PCFeedCollectionViewCell.h"
+#import "PCComment.h"
 #import "PCPhoto.h"
 #import "PCUser.h"
 #import "PCLike.h"
@@ -52,34 +53,20 @@ UIGestureRecognizerDelegate
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-//    PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
-//    //[query whereKey:@"username" equalTo:@"a"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            // The find succeeded.
-//            NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
-//
-//            [self.feedArray removeAllObjects];
-//            // Do something with the found objects
-//            for (PCPhoto *object in objects) {
-//                [self.feedArray addObject:object];
-//            }
-//        } else {
-//            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
+- (void)viewDidAppear:(BOOL)animated {
+    [self loadPhotos];
 }
+
 
 - (void)loadPhotos {
     PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
-    //[query whereKey:@"username" equalTo:@"a"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu photos.", (unsigned long)objects.count);
             // Do something with the found objects
+            [self.feedArray removeAllObjects];
             for (PCPhoto *object in objects) {
                 [self.feedArray addObject:object];
             }
@@ -102,7 +89,7 @@ UIGestureRecognizerDelegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PCFeedCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellID" forIndexPath:indexPath];
     cell.userImageView.layer.cornerRadius = 15;
-
+    cell.commentLabel.text = [self.feedArray[indexPath.row] comment];
     PFFile *usersPhoto = [self.feedArray[indexPath.row] originalImage];
     [usersPhoto getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
@@ -121,8 +108,40 @@ UIGestureRecognizerDelegate
         }];
     }
 
+    PFQuery *query = [PFQuery queryWithClassName:@"PCLike"];
+    [query whereKey:@"photo" equalTo:(PCPhoto *)self.feedArray[indexPath.row]];
+     [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        NSLog(@"Number of Likes: %i", number);
+         cell.likesLabel.text = [NSString stringWithFormat:@"%i Likes", number];
+        
+    }];
+
     cell.usernameLabel.text = [self.feedArray[indexPath.row] username];
     return cell;
+}
+
+- (IBAction)onCommentButtonTapped:(UIButton *)button {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Leave Comment" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        PFUser *currentUser = [PFUser currentUser];
+        //photo(to be commented on) user(who is writing the comment) comment
+
+        PCComment *comment = [PCComment new];
+        comment.user = (PCUser *)currentUser;
+        PCFeedCollectionViewCell *cell = (PCFeedCollectionViewCell *)button.superview;
+        NSIndexPath *indexPath = [self.feedCollectionView indexPathForCell:cell];
+        comment.photo = (PCPhoto *)self.feedArray[indexPath.row];
+        comment.comment = ((UITextField *)alertController.textFields.firstObject).text;
+        [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Adding a Comment");
+            // refresh here
+            [self.feedCollectionView reloadData];
+        }];
+    }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -8,19 +8,23 @@
 
 #import "PCProfileViewController.h"
 #import "PCUserProfileCollectionViewCell.h"
+#import "PCCollectionReusableView.h"
 #import "PCPhoto.h"
 
-@interface PCProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
-@property (weak, nonatomic) IBOutlet UILabel *postsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *followersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
+@interface PCProfileViewController ()
+
+<
+UICollectionViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout,
+UIScrollViewDelegate
+>
+
+
 @property (weak, nonatomic) IBOutlet UICollectionView *profileCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSMutableArray *userPhotoArray;
+@property PCCollectionReusableView *reusableView;
 
 @end
 
@@ -28,28 +32,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self loadPhotos];
 
     self.collectionView.delegate = self;
     //self.userPhotoArray = [NSMutableArray new];
 
-    self.profileImageView.layer.cornerRadius = 37.5;
+    self.reusableView.profileImageView.layer.cornerRadius = 37.5;
 
-    self.nameLabel.text = self.user.username;
-    self.user = (PCUser *)[PFUser currentUser];
+//    self.user = (PCUser *)[PFUser currentUser];
 
     PFFile *userImageFile = self.user.profileImage;
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
-            self.profileImageView.image = [UIImage imageWithData:imageData];
+            self.reusableView.profileImageView.image = [UIImage imageWithData:imageData];
         }
     }];
 
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [self loadPhotos];
-   }
+    [self loadInfo];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+        return CGSizeMake(0, 100);
+    }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PCUserProfileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellID" forIndexPath:indexPath];
@@ -94,6 +105,21 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+}
+
+- (void)loadInfo {
+    PCUser *user = [PCUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
+    [query whereKey:@"user" equalTo:user];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        NSLog(@"Number of Pics: %i", number);
+        self.reusableView.postsLabel.text = [NSString stringWithFormat:@"%i posts", number];
+    }];
+//    self.reusableView.infoLabel =
+    self.reusableView.infoLabel.text = user.bio;
+    self.reusableView.websiteLabel.text = user.website;
+    self.reusableView.nameLabel.text = user.username;
+
 
 }
 

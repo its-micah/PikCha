@@ -12,5 +12,15 @@
 
 @dynamic user;
 @dynamic photo;
+@dynamic hashTag;
+
++ (void)load {
+    [self registerSubclass];
+}
+
++(NSString *)parseClassName {
+    return @"PCHashtag";
+}
+
 
 @end
