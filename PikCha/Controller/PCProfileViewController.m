@@ -40,6 +40,7 @@ UIScrollViewDelegate
 
 //    self.user = (PCUser *)[PFUser currentUser];
 
+
     PFFile *userImageFile = self.user.profileImage;
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
@@ -48,6 +49,8 @@ UIScrollViewDelegate
     }];
 
 }
+
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -58,9 +61,7 @@ UIScrollViewDelegate
     [self loadInfo];
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-        return CGSizeMake(0, 100);
-    }
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PCUserProfileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellID" forIndexPath:indexPath];
@@ -76,10 +77,17 @@ UIScrollViewDelegate
 
 }
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    return CGSizeMake(120, 120);
-//}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+
+    UICollectionReusableView *reusableView = nil;
+
+    if (kind == UICollectionElementKindSectionHeader) {
+        PCCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        reusableView = headerView;
+    }
+
+    return reusableView;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.userPhotoArray.count;
