@@ -37,8 +37,6 @@ UIGestureRecognizerDelegate
     self.feedArray = [NSMutableArray new];
     self.feedCollectionView.delegate = self;
 
-
-
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor colorWithRed:0.331 green:0.884 blue:1.000 alpha:1.000];
     self.refreshControl.tintColor = [UIColor whiteColor];
@@ -48,6 +46,14 @@ UIGestureRecognizerDelegate
 
 
     [self loadPhotos];
+
+    UIImageView *navigationImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 19)];
+    navigationImage.image = [UIImage imageNamed:@"headerImage"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 19)];
+    [titleImageView addSubview:navigationImage];
+    self.navigationItem.titleView = titleImageView;
+    navigationImage.contentMode = UIViewContentModeScaleAspectFit;
+
 
 
 

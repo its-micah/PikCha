@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pOW-wS-TSQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pOW-wS-TSQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -361,7 +361,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="KHE-O6-pJS"/>
                                                 <constraint firstAttribute="width" constant="43" id="eOb-Zm-tEh"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -383,7 +383,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="Jsy-fN-b37"/>
                                                 <constraint firstAttribute="width" constant="66" id="bZJ-bR-2GU"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -405,7 +405,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="DSD-49-ZdG"/>
                                                 <constraint firstAttribute="width" constant="69" id="kIP-eH-Az9"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -427,7 +427,7 @@
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="eK0-Kd-Vgi"/>
                                                 <constraint firstAttribute="height" constant="13" id="uj8-LX-G6t"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -436,7 +436,8 @@
                                                     <exclude reference="uj8-LX-G6t"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="18" y="95" width="35.5" height="13"/>
                                                 <mask key="constraints">
                                                     <include reference="eK0-Kd-Vgi"/>
                                                     <include reference="uj8-LX-G6t"/>
@@ -449,7 +450,7 @@
                                                 <constraint firstAttribute="height" constant="13" id="URi-1W-8iy"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="eY7-kr-d7m"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -458,7 +459,8 @@
                                                     <exclude reference="eY7-kr-d7m"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="18" y="117" width="35.5" height="13"/>
                                                 <mask key="constraints">
                                                     <include reference="URi-1W-8iy"/>
                                                     <include reference="eY7-kr-d7m"/>
@@ -471,7 +473,7 @@
                                                 <constraint firstAttribute="width" constant="144" id="Ade-Yg-pJF"/>
                                                 <constraint firstAttribute="height" constant="13" id="ZWO-Xx-Ubc"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -493,6 +495,7 @@
                                                 <constraint firstAttribute="width" constant="45" id="iOZ-s5-87e"/>
                                                 <constraint firstAttribute="height" constant="30" id="xR7-bo-z5h"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                             <state key="normal" title="Follow">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -534,6 +537,7 @@
                                                 <constraint firstAttribute="width" constant="98" id="3fL-Yi-M4t"/>
                                                 <constraint firstAttribute="height" constant="30" id="w27-y2-uHF"/>
                                             </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                             <state key="normal" title="Edit profile">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -695,7 +699,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="5sZ-ul-z9Q">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="x7z-0d-bz6">
+                        <barButtonItem key="rightBarButtonItem" image="logout" id="x7z-0d-bz6">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onLogOutButtonTapped:" destination="qaP-ce-7Qt" id="ogL-ol-mDd"/>
@@ -728,6 +732,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="64x-3k-OfF"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.94901960784313721" green="0.38039215686274508" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -821,13 +826,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Iq-cM-HfI">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="8cD-dh-zw7">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="8cD-dh-zw7">
                             <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="People"/>
                                 <segment title="HashTags"/>
                             </segments>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onSelectSegmentedControl:" destination="Iip-PF-60P" eventType="valueChanged" id="Lo3-08-iwe"/>
                             </connections>
@@ -841,7 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66C-4u-8yl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4990.5" y="789"/>
+            <point key="canvasLocation" x="4816.5" y="789"/>
         </scene>
         <!--Likes View Controller-->
         <scene sceneID="9VT-RP-OfH">
@@ -970,7 +976,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="KsD-YD-Qit"/>
                                                         <constraint firstAttribute="width" constant="173" id="esb-6U-Y90"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1013,8 +1019,8 @@
                                                             <variation key="widthClass=compact" constant="142"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="11"/>
+                                                    <color key="textColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -1037,7 +1043,7 @@
                                                             <variation key="widthClass=compact" constant="12"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1061,7 +1067,7 @@
                                                         </constraint>
                                                         <constraint firstAttribute="width" constant="381" id="qJz-7Z-1Wn"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1079,15 +1085,15 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjI-XB-GAP">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="71" id="J6r-8x-iB4"/>
                                                         <constraint firstAttribute="height" constant="18" id="j3N-bL-RKT"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                                     <state key="normal" title="Comment">
-                                                        <color key="titleColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -1304,11 +1310,13 @@
             <objects>
                 <tabBarController id="pOW-wS-TSQ" customClass="PCTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="m5y-Ur-bGc">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" translucent="NO" id="m5y-Ur-bGc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.14777761169608195" green="0.16778283196164653" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.23921568627450981" green="0.26666666666666666" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="xfh-Ot-dOS" kind="relationship" relationship="viewControllers" id="Eoq-f6-7Ge"/>
@@ -1322,7 +1330,7 @@
             </objects>
             <point key="canvasLocation" x="2952" y="446"/>
         </scene>
-        <!--Item-->
+        <!--Camera View Controller-->
         <scene sceneID="nti-Av-Q9X">
             <objects>
                 <viewController id="TiY-LQ-s3m" customClass="PCCameraViewController" sceneMemberID="viewController">
@@ -1336,14 +1344,17 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fci-El-3kB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem id="8yB-FJ-W3G">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="IJI-f3-0PW">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="cancelAndReturn" destination="TiY-LQ-s3m" id="ZIe-qK-Nu2"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Share" id="QZd-8C-rj4">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="takePicture:" destination="TiY-LQ-s3m" id="2Z0-6G-YNu"/>
                                             </connections>
@@ -1465,7 +1476,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qxK-7Z-Ica"/>
+                    <tabBarItem key="tabBarItem" title="" image="camera" id="qxK-7Z-Ica">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="commentTextField" destination="tiI-3E-bSm" id="bh9-dj-vCf"/>
                         <outlet property="imageView" destination="0gI-jG-q53" id="Ngr-5X-SzC"/>
@@ -1487,13 +1500,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-CJ-pTn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-CJ-pTn">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="1Ym-04-oCE"/>
                                     <constraint firstAttribute="height" constant="30" id="W3u-n0-mTc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1508,13 +1521,13 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfE-OA-igl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfE-OA-igl">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2vd-ZQ-CrG"/>
                                     <constraint firstAttribute="width" constant="201" id="8CW-xC-8mN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1535,7 +1548,9 @@
                                     <constraint firstAttribute="width" constant="107" id="Irp-x1-xNi"/>
                                     <constraint firstAttribute="height" constant="30" id="hKs-wu-3Gj"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="Create Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -1560,7 +1575,9 @@
                                     <constraint firstAttribute="width" constant="38" id="99S-DY-e7P"/>
                                     <constraint firstAttribute="height" constant="30" id="so4-8h-OTT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -1579,39 +1596,36 @@
                                     <action selector="onLoginTapped:" destination="EJB-Ib-5vD" eventType="touchUpInside" id="rbq-1I-pnG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PikCha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1S-If-lTo">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadImage" translatesAutoresizingMaskIntoConstraints="NO" id="sjJ-Ne-z6B">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="54F-oe-4qe"/>
-                                    <constraint firstAttribute="width" constant="201" id="AqF-Ee-cDr"/>
+                                    <constraint firstAttribute="width" constant="125" id="G51-Vl-OfA"/>
+                                    <constraint firstAttribute="height" constant="125" id="OiM-9v-IHD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="54F-oe-4qe"/>
-                                        <exclude reference="AqF-Ee-cDr"/>
+                                        <exclude reference="G51-Vl-OfA"/>
+                                        <exclude reference="OiM-9v-IHD"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="54F-oe-4qe"/>
-                                        <include reference="AqF-Ee-cDr"/>
+                                        <include reference="G51-Vl-OfA"/>
+                                        <include reference="OiM-9v-IHD"/>
                                     </mask>
                                 </variation>
-                            </label>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.38039215686274508" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="wfE-OA-igl" secondAttribute="centerY" id="0lf-1A-suL"/>
-                            <constraint firstAttribute="centerX" secondItem="q1S-If-lTo" secondAttribute="centerX" id="DQv-If-9Pg"/>
                             <constraint firstItem="wfE-OA-igl" firstAttribute="top" secondItem="kn7-CJ-pTn" secondAttribute="bottom" constant="37" id="KRC-Gg-56v"/>
                             <constraint firstAttribute="centerX" secondItem="kn7-CJ-pTn" secondAttribute="centerX" id="SQf-J1-gc1"/>
                             <constraint firstAttribute="centerX" secondItem="wfE-OA-igl" secondAttribute="centerX" id="SyB-U4-1Kr"/>
+                            <constraint firstAttribute="centerX" secondItem="sjJ-Ne-z6B" secondAttribute="centerX" id="dtj-bc-AMI"/>
                             <constraint firstItem="JyR-yP-kxp" firstAttribute="top" secondItem="wfE-OA-igl" secondAttribute="bottom" constant="19" id="eNT-Ol-b4Q"/>
                             <constraint firstItem="tbZ-kb-iQB" firstAttribute="top" secondItem="wfE-OA-igl" secondAttribute="bottom" constant="19" id="n6e-Sh-Pg8"/>
-                            <constraint firstItem="q1S-If-lTo" firstAttribute="top" secondItem="Hcm-d6-gtR" secondAttribute="bottom" constant="61" id="t33-OD-YGe"/>
+                            <constraint firstItem="kn7-CJ-pTn" firstAttribute="top" secondItem="sjJ-Ne-z6B" secondAttribute="bottom" constant="42" id="owT-uT-xsV"/>
                             <constraint firstItem="wfE-OA-igl" firstAttribute="trailing" secondItem="JyR-yP-kxp" secondAttribute="trailing" id="tmt-Rr-q8c"/>
                             <constraint firstItem="wfE-OA-igl" firstAttribute="leading" secondItem="tbZ-kb-iQB" secondAttribute="leading" id="wuS-NW-cyt"/>
                         </constraints>
@@ -1621,19 +1635,19 @@
                                 <exclude reference="wfE-OA-igl"/>
                                 <exclude reference="tbZ-kb-iQB"/>
                                 <exclude reference="JyR-yP-kxp"/>
-                                <exclude reference="q1S-If-lTo"/>
+                                <exclude reference="sjJ-Ne-z6B"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dtj-bc-AMI"/>
                                 <exclude reference="SQf-J1-gc1"/>
-                                <exclude reference="DQv-If-9Pg"/>
-                                <exclude reference="t33-OD-YGe"/>
+                                <exclude reference="owT-uT-xsV"/>
                                 <exclude reference="0lf-1A-suL"/>
                                 <exclude reference="KRC-Gg-56v"/>
                                 <exclude reference="SyB-U4-1Kr"/>
                                 <exclude reference="tmt-Rr-q8c"/>
                                 <exclude reference="wuS-NW-cyt"/>
-                                <exclude reference="eNT-Ol-b4Q"/>
                                 <exclude reference="n6e-Sh-Pg8"/>
+                                <exclude reference="eNT-Ol-b4Q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1642,19 +1656,19 @@
                                 <include reference="wfE-OA-igl"/>
                                 <include reference="tbZ-kb-iQB"/>
                                 <include reference="JyR-yP-kxp"/>
-                                <include reference="q1S-If-lTo"/>
+                                <include reference="sjJ-Ne-z6B"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="dtj-bc-AMI"/>
                                 <include reference="SQf-J1-gc1"/>
-                                <include reference="DQv-If-9Pg"/>
-                                <include reference="t33-OD-YGe"/>
+                                <include reference="owT-uT-xsV"/>
                                 <include reference="0lf-1A-suL"/>
                                 <include reference="KRC-Gg-56v"/>
                                 <include reference="SyB-U4-1Kr"/>
                                 <include reference="tmt-Rr-q8c"/>
                                 <include reference="wuS-NW-cyt"/>
-                                <include reference="eNT-Ol-b4Q"/>
                                 <include reference="n6e-Sh-Pg8"/>
+                                <include reference="eNT-Ol-b4Q"/>
                             </mask>
                         </variation>
                     </view>
@@ -1674,9 +1688,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0zw-ow-yGJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bos-rf-CDM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bos-rf-CDM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94509803921568625" green="0.35294117647058826" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1687,11 +1702,13 @@
             </objects>
             <point key="canvasLocation" x="5836.5" y="140"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="wRu-2R-opK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb9-v6-cBc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="JBQ-Mo-w51"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" id="JBQ-Mo-w51">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2Qd-Eb-dly">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1707,11 +1724,13 @@
             </objects>
             <point key="canvasLocation" x="4072.5" y="-558"/>
         </scene>
-        <!--Feed-->
+        <!--Navigation Controller-->
         <scene sceneID="meF-nT-xXS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xfh-Ot-dOS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="jBg-wa-0Uo"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="jBg-wa-0Uo">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="q4Y-X0-2uR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1727,11 +1746,13 @@
             </objects>
             <point key="canvasLocation" x="4072.5" y="127"/>
         </scene>
-        <!--Search-->
+        <!--Navigation Controller-->
         <scene sceneID="iJu-uX-HqX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mTC-SV-78f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="b3a-n6-x4L"/>
+                    <tabBarItem key="tabBarItem" title="" image="search" id="b3a-n6-x4L">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="n6l-S9-eJD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1747,11 +1768,13 @@
             </objects>
             <point key="canvasLocation" x="4072.5" y="789"/>
         </scene>
-        <!--Likes-->
+        <!--Navigation Controller-->
         <scene sceneID="iMv-ao-ICJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KEu-RC-QwF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Likes" id="7XD-Xa-e0C"/>
+                    <tabBarItem key="tabBarItem" title="" image="like" id="7XD-Xa-e0C">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="TIf-GK-PoR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1769,6 +1792,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
         <image name="icon" width="29" height="29"/>
+        <image name="like" width="25" height="25"/>
+        <image name="loadImage" width="125" height="125"/>
+        <image name="logout" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
     </resources>
 </document>

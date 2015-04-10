@@ -20,10 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.tintColor = [UIColor blueColor];
+    self.tabBar.tintColor = [UIColor colorWithWhite:0.834 alpha:1.000];
+
 
    [self confirmUserLoggedIn];
 }
+
+
 
 - (void)confirmUserLoggedIn {
 

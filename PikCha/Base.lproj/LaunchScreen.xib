@@ -9,10 +9,26 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cwf-yt-1Qt">
+                    <rect key="frame" x="115" y="115" width="250" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="Q7d-En-bHg"/>
+                        <constraint firstAttribute="width" constant="250" id="rrL-xJ-Kw8"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.38039215686274508" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="Cwf-yt-1Qt" secondAttribute="centerY" id="oVT-HQ-G7u"/>
+                <constraint firstAttribute="centerX" secondItem="Cwf-yt-1Qt" secondAttribute="centerX" id="zkP-tc-7De"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="loadImage" width="125" height="125"/>
+    </resources>
 </document>

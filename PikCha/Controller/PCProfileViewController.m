@@ -33,6 +33,14 @@ UIScrollViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UIImageView *navigationImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 19)];
+    navigationImage.image = [UIImage imageNamed:@"headerImage"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 19)];
+    [titleImageView addSubview:navigationImage];
+    self.navigationItem.titleView = titleImageView;
+    navigationImage.contentMode = UIViewContentModeScaleAspectFit;
+
+
     self.collectionView.delegate = self;
     //self.userPhotoArray = [NSMutableArray new];
 
