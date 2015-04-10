@@ -100,7 +100,7 @@ UIScrollViewDelegate
         [query whereKey:@"user" equalTo:user];
         [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
             NSLog(@"Number of Pics: %i", number);
-            headerView.postsLabel.text = [NSString stringWithFormat:@"%i posts", number];
+            headerView.postsLabel.text = [NSString stringWithFormat:@"%i", number];
         }];
         PFFile *userImageFile = user.profileImage;
         [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -126,9 +126,10 @@ UIScrollViewDelegate
 }
 
 - (void)loadPhotos {
+    PCUser *currentUser = [PCUser currentUser];
     self.userPhotoArray = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
-    [query whereKey:@"username" equalTo:@"a"];
+    [query whereKey:@"user" equalTo:currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
@@ -153,7 +154,7 @@ UIScrollViewDelegate
     [query whereKey:@"user" equalTo:user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         NSLog(@"Number of Pics: %i", number);
-        self.reusableView.postsLabel.text = [NSString stringWithFormat:@"%i posts", number];
+        self.reusableView.postsLabel.text = [NSString stringWithFormat:@"%i", number];
     }];
 //    self.reusableView.infoLabel =
     self.reusableView.infoLabel.text = user.bio;
