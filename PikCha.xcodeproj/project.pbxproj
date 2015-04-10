@@ -11,6 +11,7 @@
 		6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF11AD3348200A53032 /* PCProfileViewController.m */; };
 		6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF41AD336B000A53032 /* PCFeedViewController.m */; };
 		6B68FFF81AD33D8200A53032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B68FFF61AD33D8200A53032 /* Main.storyboard */; };
+		6BB1E50A1AD81CC6007E6194 /* PCCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB1E5091AD81CC6007E6194 /* PCCommentViewController.m */; };
 		C71ADCAE1AD3204500190E51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCAD1AD3204500190E51 /* main.m */; };
 		C71ADCB11AD3204500190E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C71ADCB01AD3204500190E51 /* AppDelegate.m */; };
 		C71ADCB91AD3204500190E51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71ADCB81AD3204500190E51 /* Images.xcassets */; };
@@ -70,6 +71,8 @@
 		6B68FFF31AD336B000A53032 /* PCFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCFeedViewController.h; path = PikCha/Controller/PCFeedViewController.h; sourceTree = "<group>"; };
 		6B68FFF41AD336B000A53032 /* PCFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCFeedViewController.m; path = PikCha/Controller/PCFeedViewController.m; sourceTree = "<group>"; };
 		6B68FFF71AD33D8200A53032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BB1E5081AD81CC6007E6194 /* PCCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCCommentViewController.h; path = PikCha/Controller/PCCommentViewController.h; sourceTree = "<group>"; };
+		6BB1E5091AD81CC6007E6194 /* PCCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCCommentViewController.m; path = PikCha/Controller/PCCommentViewController.m; sourceTree = "<group>"; };
 		C71ADCA81AD3204500190E51 /* PikCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PikCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71ADCAC1AD3204500190E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C71ADCAD1AD3204500190E51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				C7666C9B1AD4995200F7F138 /* PCTabBarController.m */,
 				C7D661F21AD5859900EC008F /* PCUserProfileCollectionViewCell.h */,
 				C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */,
+				6BB1E5081AD81CC6007E6194 /* PCCommentViewController.h */,
+				6BB1E5091AD81CC6007E6194 /* PCCommentViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				C7D662061AD5B45900EC008F /* PCFeedCollectionViewCell.m in Sources */,
 				C7D662001AD593D000EC008F /* PCTag.m in Sources */,
 				C7D662031AD5944300EC008F /* PCFollow.m in Sources */,
+				6BB1E50A1AD81CC6007E6194 /* PCCommentViewController.m in Sources */,
 				C7D661FA1AD592B800EC008F /* PCLike.m in Sources */,
 				6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */,
 				C7A1176E1AD43AF500444FF2 /* PCPhoto.m in Sources */,

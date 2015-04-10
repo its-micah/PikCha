@@ -33,6 +33,8 @@
 }
 
 - (IBAction)onCommentButtonTapped:(id)sender {
+
+    [self.delegate showSegue:self.cellNumber];
     
 }
 

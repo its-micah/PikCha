@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PCFeedCollectionViewDelegate <NSObject>
+
+- (void)showSegue:(NSInteger)cellNumber;
+
+@end
+
 @interface PCFeedCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
@@ -16,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *likeImageView;
+@property NSInteger cellNumber;
+@property (nonatomic, assign) id <PCFeedCollectionViewDelegate> delegate;
 
 - (void) animateLike;
 
