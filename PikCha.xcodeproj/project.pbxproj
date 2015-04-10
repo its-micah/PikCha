@@ -363,11 +363,11 @@
 				TargetAttributes = {
 					C71ADCA71AD3204400190E51 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = QGEUNUGB27;
+						DevelopmentTeam = NUN6ZLGGLC;
 					};
 					C71ADCC01AD3204500190E51 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = QGEUNUGB27;
+						DevelopmentTeam = NUN6ZLGGLC;
 						TestTargetID = C71ADCA71AD3204400190E51;
 					};
 				};

@@ -48,7 +48,7 @@
     self.user.gender = self.genderTextField.text;
 
 
-    UIImage *smallerImage = [PCPhoto imageWithImage:self.profilePictureImageView.image scaledToSize:CGSizeMake(75, 100)];
+    UIImage *smallerImage = [PCPhoto imageWithImage:self.profilePictureImageView.image scaledToSize:CGSizeMake(self.profilePictureImageView.frame.size.width / 3, self.profilePictureImageView.frame.size.height / 3)];
     NSData *imageData = UIImagePNGRepresentation(smallerImage);
     PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
     self.user.profileImage = imageFile;

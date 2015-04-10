@@ -54,16 +54,17 @@
     [self.locationManager startUpdatingLocation];
 
 
-    self.toolBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-54, self.view.frame.size.width, 55)];
+    self.toolBar=[[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-139, self.view.frame.size.width, 150)];
 
-    self.toolBar.barStyle = UIBarStyleBlackOpaque;
+    self.toolBar.barStyle = UIBarStyleBlackTranslucent;
+    //self.toolBar.backgroundColor = [UIColor redColor];
+    self.toolBar.tintColor = [UIColor whiteColor];
     NSArray *items=[NSArray arrayWithObjects:
-                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel  target:self action:@selector(cancelPicture)],
+                    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cancel"] style:UIBarButtonItemStylePlain  target:self action:@selector(cancelPicture)],
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
-                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:@selector(snapPicture)],
+                    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cameraIconBig"] style:UIBarButtonItemStylePlain target:self action:@selector(snapPicture)],
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
-//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch  target:self action:@selector(displayPhotoLibrary)],
-                    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon"] style:UIBarButtonItemStylePlain target:self action:@selector(displayPhotoLibrary)],
+                    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home"] style:UIBarButtonItemStylePlain target:self action:@selector(displayPhotoLibrary)],
                     nil];
 
     [self.toolBar setItems:items];
@@ -108,7 +109,6 @@
             break;
         }
     }
-
 }
 
 -(IBAction)takePicture:(id)sender{
@@ -117,7 +117,7 @@
     PCUser *user = (PCUser *)[PFUser currentUser];
     PCPhoto *photo = [PCPhoto new];
 
-    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(225.0, 300.0)];
+    UIImage *myIcon2 = [PCPhoto imageWithImage:self.imageView.image scaledToSize:CGSizeMake(self.imageView.image.size.width/4, self.imageView.image.size.height/4)];
 
     NSData *imageData2 = UIImagePNGRepresentation(myIcon2);
     PFFile *imageFile2 = [PFFile fileWithName:@"image2.png" data:imageData2];

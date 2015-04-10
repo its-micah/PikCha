@@ -11,6 +11,8 @@
 @implementation PCFeedCollectionViewCell
 
 
+
+
 - (void) animateLike {
     [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         self.likeImageView.transform = CGAffineTransformMakeScale(1.3, 1.3);

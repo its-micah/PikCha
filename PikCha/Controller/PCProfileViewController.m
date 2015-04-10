@@ -49,12 +49,12 @@ UIScrollViewDelegate
 //    self.user = (PCUser *)[PFUser currentUser];
 
 
-    PFFile *userImageFile = self.user.profileImage;
-    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-        if (!error) {
-            self.reusableView.profileImageView.image = [UIImage imageWithData:imageData];
-        }
-    }];
+//    PFFile *userImageFile = self.user.profileImage;
+//    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+//        if (!error) {
+//            self.reusableView.profileImageView.image = [UIImage imageWithData:imageData];
+//        }
+//    }];
 
 }
 
@@ -95,7 +95,27 @@ UIScrollViewDelegate
 
     if (kind == UICollectionElementKindSectionHeader) {
         PCCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        PCUser *user = [PCUser currentUser];
+        PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
+        [query whereKey:@"user" equalTo:user];
+        [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+            NSLog(@"Number of Pics: %i", number);
+            headerView.postsLabel.text = [NSString stringWithFormat:@"%i posts", number];
+        }];
+        PFFile *userImageFile = user.profileImage;
+        [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (!error) {
+                headerView.profileImageView.layer.cornerRadius = headerView.profileImageView.bounds.size.width/2.0;
+                headerView.profileImageView.clipsToBounds = YES;
+                headerView.profileImageView.image = [UIImage imageWithData:imageData];
+            }
+        }];
+
+        headerView.nameLabel.text = user.username;
+        headerView.infoLabel.text = user.bio;
+        headerView.websiteLabel.text = user.website;
         reusableView = headerView;
+
     }
 
     return reusableView;
