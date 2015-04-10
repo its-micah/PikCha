@@ -8,6 +8,8 @@
 
 #import "PCFeedViewController.h"
 #import "PCFeedCollectionViewCell.h"
+#import "PCProfileViewController.h"
+#import "PCLoginViewController.h"
 #import "PCComment.h"
 #import "PCPhoto.h"
 #import "PCUser.h"
@@ -23,10 +25,8 @@ UIGestureRecognizerDelegate
 >
 
 @property NSMutableArray *feedArray;
-
 @property (weak, nonatomic) IBOutlet UICollectionView *feedCollectionView;
 @property UIRefreshControl *refreshControl;
-
 
 @end
 
@@ -37,8 +37,6 @@ UIGestureRecognizerDelegate
     self.feedArray = [NSMutableArray new];
     self.feedCollectionView.delegate = self;
 
-
-
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor colorWithRed:0.331 green:0.884 blue:1.000 alpha:1.000];
     self.refreshControl.tintColor = [UIColor whiteColor];
@@ -46,17 +44,12 @@ UIGestureRecognizerDelegate
     [self.feedCollectionView addSubview:self.refreshControl];
     self.feedCollectionView.alwaysBounceVertical = YES;
 
-
     [self loadPhotos];
-
-
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [self loadPhotos];
 }
-
 
 - (void)loadPhotos {
     PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];

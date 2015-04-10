@@ -62,8 +62,8 @@ UIScrollViewDelegate
 }
 
 - (IBAction)onLogOutButtonTapped:(id)sender {
-
-    
+    [self.tabBarController setSelectedIndex:0];
+    [self.delegate logout];
 }
 
 

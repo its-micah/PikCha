@@ -9,8 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "PCUser.h"
 
+@protocol PCProfileLogoutDelegate <NSObject>
+
+- (void)logout;
+
+@end
+
+
 @interface PCProfileViewController : UIViewController
 
 @property PCUser *user;
+
+@property (nonatomic, assign) id <PCProfileLogoutDelegate> delegate;
+
 
 @end

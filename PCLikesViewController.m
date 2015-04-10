@@ -13,6 +13,8 @@
 @interface PCLikesViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *likesTableView;
 @property NSMutableArray *likesArray;
+@property UIRefreshControl *refreshControl;
+
 @end
 
 @implementation PCLikesViewController
@@ -22,20 +24,35 @@
 
     self.likesTableView.delegate = self;
 
-    self.likesArray = [NSMutableArray new];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor colorWithRed:0.331 green:0.884 blue:1.000 alpha:1.000];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(loadLikes) forControlEvents:UIControlEventValueChanged];
+    [self.likesTableView addSubview:self.refreshControl];
+    self.likesTableView.alwaysBounceVertical = YES;
+
+    [self loadLikes];
+}
+
+- (void)loadLikes {
     PFUser *currentUser = [PFUser currentUser];
+    self.likesArray = [NSMutableArray new];
 
     PFQuery *query = [PFQuery queryWithClassName:@"PCLike"];
     [query whereKey:@"photoUser" equalTo:(PFUser *)currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (PCLike *like in objects) {
             [self.likesArray addObject:like];
-            NSLog(@"%@", like.photo.comment);
         }
+        NSLog(@"Likes count: %li", objects.count);
         [self.likesTableView reloadData];
+        if (self.refreshControl) {
+            [self.refreshControl endRefreshing];
+        }
     }];
 
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
