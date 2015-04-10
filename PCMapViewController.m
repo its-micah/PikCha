@@ -14,6 +14,7 @@
 
 @interface PCMapViewController () <MKMapViewDelegate>
 
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -69,16 +70,16 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(-40, -100, 100, 100)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
 
-        NSString *id = [(PCPhotoAnnotation *)annotationView.annotation objectID];
+        NSString *objectID = [(PCPhotoAnnotation *)annotationView.annotation objectID];
 
-        PFQuery *query = [PFQuery queryWithClassName:@"HomePopulation"];
-        [query getObjectInBackgroundWithId:[NSString stringWithFormat:@"%@", id] block:^(PFObject *object, NSError *error) {
-            PFFile *file = [object objectForKey:@"imageFile"];
+        PFQuery *query = [PFQuery queryWithClassName:@"PCPhoto"];
+        [query getObjectInBackgroundWithId:[NSString stringWithFormat:@"%@", objectID] block:^(PFObject *object, NSError *error) {
+            PFFile *file = [object objectForKey:@"originalImage"];
             [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 imageView.image = [UIImage imageWithData:data];
             }];
         }];
-        annotationView.image = [UIImage imageNamed:@"pointer"];
+//        annotationView.image = [UIImage imageNamed:@"pointer"];
         [annotationView addSubview:imageView];
 
         return annotationView;

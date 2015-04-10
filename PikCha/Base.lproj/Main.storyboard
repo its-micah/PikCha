@@ -275,6 +275,62 @@
             </objects>
             <point key="canvasLocation" x="6621" y="140"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="f0u-b1-gth">
+            <objects>
+                <viewController id="Oy0-E1-y0e" customClass="PCMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MrU-jO-htK"/>
+                        <viewControllerLayoutGuide type="bottom" id="2td-WC-Pn4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U5Y-Be-xBB">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vae-jm-ds2">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Oy0-E1-y0e" id="B2n-yl-3FO"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vae-jm-ds2" secondAttribute="trailing" constant="-16" id="37H-he-hoe"/>
+                            <constraint firstItem="vae-jm-ds2" firstAttribute="leading" secondItem="U5Y-Be-xBB" secondAttribute="leadingMargin" constant="-16" id="KLO-aK-1aF"/>
+                            <constraint firstItem="2td-WC-Pn4" firstAttribute="top" secondItem="vae-jm-ds2" secondAttribute="bottom" id="aS7-Sx-hB6"/>
+                            <constraint firstItem="vae-jm-ds2" firstAttribute="top" secondItem="MrU-jO-htK" secondAttribute="bottom" id="hYE-Xv-ASR"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="vae-jm-ds2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="37H-he-hoe"/>
+                                <exclude reference="KLO-aK-1aF"/>
+                                <exclude reference="hYE-Xv-ASR"/>
+                                <exclude reference="aS7-Sx-hB6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="vae-jm-ds2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="37H-he-hoe"/>
+                                <include reference="KLO-aK-1aF"/>
+                                <include reference="hYE-Xv-ASR"/>
+                                <include reference="aS7-Sx-hB6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="vae-jm-ds2" id="jbR-li-oN9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RUI-Hp-vhj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4990.5" y="-1290"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="sRR-8u-eDg">
             <objects>
@@ -552,6 +608,18 @@
                                                 </mask>
                                             </variation>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-EG-0Qy">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <state key="normal" title="Map">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="346" y="132" width="36" height="30"/>
+                                            </variation>
+                                            <connections>
+                                                <segue destination="Oy0-E1-y0e" kind="show" id="6zS-Mm-v9a"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -589,6 +657,7 @@
                                             <exclude reference="JdR-Qp-nbd"/>
                                             <exclude reference="tA3-jP-ikG"/>
                                             <exclude reference="oIM-y8-qRU"/>
+                                            <exclude reference="d3q-EG-0Qy"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="M8Z-9o-omi"/>
@@ -626,6 +695,7 @@
                                             <include reference="JdR-Qp-nbd"/>
                                             <include reference="tA3-jP-ikG"/>
                                             <include reference="oIM-y8-qRU"/>
+                                            <include reference="d3q-EG-0Qy"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="M8Z-9o-omi"/>
