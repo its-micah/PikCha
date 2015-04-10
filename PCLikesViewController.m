@@ -39,7 +39,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    //Fix this. Make it work.
     PCLike *pcLike = self.likesArray[indexPath.row];
 
     NSDateFormatter* dateFormatter = [NSDateFormatter new];
