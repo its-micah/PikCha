@@ -82,7 +82,6 @@ UIGestureRecognizerDelegate
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-
     return CGSizeMake(self.feedCollectionView.frame.size.width, self.feedCollectionView.frame.size.height);
 }
 
@@ -90,6 +89,13 @@ UIGestureRecognizerDelegate
     PCFeedCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellID" forIndexPath:indexPath];
     cell.userImageView.layer.cornerRadius = 15;
     cell.commentLabel.text = [self.feedArray[indexPath.row] comment];
+
+    NSDateFormatter* dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm a"];
+    NSString *photoTime = [dateFormatter stringFromDate:[self.feedArray[indexPath.row] createdAt]];
+    cell.timeStampLabel.text = photoTime;
+
+
     PFFile *usersPhoto = [self.feedArray[indexPath.row] originalImage];
     [usersPhoto getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {

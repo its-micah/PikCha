@@ -1005,9 +1005,11 @@
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ClK-4B-dns"/>
-                                                        <constraint firstAttribute="width" constant="64" id="zZp-ml-Mvl"/>
+                                                        <constraint firstAttribute="width" constant="64" id="zZp-ml-Mvl">
+                                                            <variation key="widthClass=compact" constant="142"/>
+                                                        </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -1079,7 +1081,7 @@
                                                         <constraint firstAttribute="height" constant="18" id="j3N-bL-RKT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="Coment">
+                                                    <state key="normal" title="Comment">
                                                         <color key="titleColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1124,7 +1126,9 @@
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="6px-xw-1i7" firstAttribute="trailing" secondItem="yTD-6E-HrD" secondAttribute="trailingMargin" id="0Ud-Vg-HWZ"/>
+                                            <constraint firstItem="6px-xw-1i7" firstAttribute="trailing" secondItem="yTD-6E-HrD" secondAttribute="trailingMargin" id="0Ud-Vg-HWZ">
+                                                <variation key="widthClass=compact" constant="-2"/>
+                                            </constraint>
                                             <constraint firstAttribute="centerX" secondItem="DCk-e9-H37" secondAttribute="centerX" id="0a9-X0-jjh"/>
                                             <constraint firstAttribute="centerX" secondItem="KxB-pi-tZG" secondAttribute="centerX" id="0zw-4X-ZYf"/>
                                             <constraint firstAttribute="centerY" secondItem="DCk-e9-H37" secondAttribute="centerY" id="12K-Ne-ofJ">
