@@ -21,11 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     self.tabBar.tintColor = [UIColor blueColor];
     ((PCProfileViewController *)((UITabBarController *)self.viewControllers[4]).viewControllers.firstObject).delegate = self;
+=======
+    self.tabBar.tintColor = [UIColor colorWithWhite:0.834 alpha:1.000];
+
+>>>>>>> 3d7afcf7e594c0413b7bcbd1195add333746d060
 
    [self confirmUserLoggedIn];
 }
+
+
 
 - (void)confirmUserLoggedIn {
 

@@ -28,6 +28,7 @@
     self.searchBar.delegate = self;
     self.searchResults = [NSMutableArray new];
     self.searchBar.placeholder = @"Find People";
+    [self.segmentedController setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:                                                         [UIFont fontWithName:@"Avenir" size:13.0], NSFontAttributeName, nil] forState:UIControlStateNormal];
 
 
 }

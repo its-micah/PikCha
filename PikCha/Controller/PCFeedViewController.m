@@ -45,6 +45,20 @@ UIGestureRecognizerDelegate
     self.feedCollectionView.alwaysBounceVertical = YES;
 
     [self loadPhotos];
+<<<<<<< HEAD
+=======
+
+    UIImageView *navigationImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 19)];
+    navigationImage.image = [UIImage imageNamed:@"headerImage"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 19)];
+    [titleImageView addSubview:navigationImage];
+    self.navigationItem.titleView = titleImageView;
+    navigationImage.contentMode = UIViewContentModeScaleAspectFit;
+
+
+
+
+>>>>>>> 3d7afcf7e594c0413b7bcbd1195add333746d060
 }
 
 - (void)viewDidAppear:(BOOL)animated {
