@@ -436,8 +436,7 @@
                                                     <exclude reference="uj8-LX-G6t"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="18" y="95" width="35.5" height="13"/>
+                                            <variation key="widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="eK0-Kd-Vgi"/>
                                                     <include reference="uj8-LX-G6t"/>
@@ -459,8 +458,7 @@
                                                     <exclude reference="eY7-kr-d7m"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="18" y="117" width="35.5" height="13"/>
+                                            <variation key="widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="URi-1W-8iy"/>
                                                     <include reference="eY7-kr-d7m"/>
@@ -1638,7 +1636,6 @@
                                 <exclude reference="sjJ-Ne-z6B"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="dtj-bc-AMI"/>
                                 <exclude reference="SQf-J1-gc1"/>
                                 <exclude reference="owT-uT-xsV"/>
                                 <exclude reference="0lf-1A-suL"/>
@@ -1646,8 +1643,9 @@
                                 <exclude reference="SyB-U4-1Kr"/>
                                 <exclude reference="tmt-Rr-q8c"/>
                                 <exclude reference="wuS-NW-cyt"/>
-                                <exclude reference="n6e-Sh-Pg8"/>
                                 <exclude reference="eNT-Ol-b4Q"/>
+                                <exclude reference="n6e-Sh-Pg8"/>
+                                <exclude reference="dtj-bc-AMI"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1659,7 +1657,6 @@
                                 <include reference="sjJ-Ne-z6B"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="dtj-bc-AMI"/>
                                 <include reference="SQf-J1-gc1"/>
                                 <include reference="owT-uT-xsV"/>
                                 <include reference="0lf-1A-suL"/>
@@ -1667,8 +1664,9 @@
                                 <include reference="SyB-U4-1Kr"/>
                                 <include reference="tmt-Rr-q8c"/>
                                 <include reference="wuS-NW-cyt"/>
-                                <include reference="n6e-Sh-Pg8"/>
                                 <include reference="eNT-Ol-b4Q"/>
+                                <include reference="n6e-Sh-Pg8"/>
+                                <include reference="dtj-bc-AMI"/>
                             </mask>
                         </variation>
                     </view>
