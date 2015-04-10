@@ -66,12 +66,15 @@
                 for (PCUser *object in objects) {
                     [self.searchResults addObject:object];
                 }
-                [self.searchTableView reloadData];
+//                [self.searchTableView reloadData];
+//                [self.searchBar resignFirstResponder];
+
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
             [self.searchTableView reloadData];
+
         }];
     } else {
 
@@ -97,6 +100,13 @@
         }];
     }
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self searchQuery:searchBar.text];
+    [self.searchBar resignFirstResponder];
+
+}
+
 
 #pragma mark - Table View Functions
 
@@ -133,7 +143,6 @@
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-
     [self searchQuery:searchText];
 }
 

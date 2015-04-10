@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B152EEB1AD850260033C7CA /* PCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B152EEA1AD850260033C7CA /* PCMapViewController.m */; };
+		6B152EF11AD851F70033C7CA /* PCPhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B152EF01AD851F70033C7CA /* PCPhotoAnnotation.m */; };
 		6B6800A31AD43AEC00A53032 /* PCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6800A21AD43AEC00A53032 /* PCUser.m */; };
 		6B68FFF21AD3348200A53032 /* PCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF11AD3348200A53032 /* PCProfileViewController.m */; };
 		6B68FFF51AD336B000A53032 /* PCFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68FFF41AD336B000A53032 /* PCFeedViewController.m */; };
@@ -64,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B152EE91AD850260033C7CA /* PCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCMapViewController.h; sourceTree = "<group>"; };
+		6B152EEA1AD850260033C7CA /* PCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCMapViewController.m; sourceTree = "<group>"; };
+		6B152EEF1AD851F70033C7CA /* PCPhotoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCPhotoAnnotation.h; sourceTree = "<group>"; };
+		6B152EF01AD851F70033C7CA /* PCPhotoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPhotoAnnotation.m; sourceTree = "<group>"; };
 		6B6800A11AD43AEC00A53032 /* PCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCUser.h; sourceTree = "<group>"; };
 		6B6800A21AD43AEC00A53032 /* PCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCUser.m; sourceTree = "<group>"; };
 		6B68FFF01AD3348200A53032 /* PCProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCProfileViewController.h; path = PikCha/Controller/PCProfileViewController.h; sourceTree = "<group>"; };
@@ -200,6 +206,8 @@
 				C7D661F31AD5859900EC008F /* PCUserProfileCollectionViewCell.m */,
 				6BB1E5081AD81CC6007E6194 /* PCCommentViewController.h */,
 				6BB1E5091AD81CC6007E6194 /* PCCommentViewController.m */,
+				6B152EE91AD850260033C7CA /* PCMapViewController.h */,
+				6B152EEA1AD850260033C7CA /* PCMapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,6 +238,8 @@
 				C7D661FF1AD593D000EC008F /* PCTag.m */,
 				6B6800A11AD43AEC00A53032 /* PCUser.h */,
 				6B6800A21AD43AEC00A53032 /* PCUser.m */,
+				6B152EEF1AD851F70033C7CA /* PCPhotoAnnotation.h */,
+				6B152EF01AD851F70033C7CA /* PCPhotoAnnotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,11 +378,11 @@
 				TargetAttributes = {
 					C71ADCA71AD3204400190E51 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = NUN6ZLGGLC;
+						DevelopmentTeam = QGEUNUGB27;
 					};
 					C71ADCC01AD3204500190E51 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = NUN6ZLGGLC;
+						DevelopmentTeam = QGEUNUGB27;
 						TestTargetID = C71ADCA71AD3204400190E51;
 					};
 				};
@@ -421,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B152EEB1AD850260033C7CA /* PCMapViewController.m in Sources */,
 				C7A25E6C1AD727E0005C05A5 /* PCCollectionReusableView.m in Sources */,
 				C7D661F71AD5923900EC008F /* PCComment.m in Sources */,
 				C7B787DF1AD3432E006EEBC9 /* PCLoginViewController.m in Sources */,
@@ -432,6 +443,7 @@
 				C7666C961AD477FE00F7F138 /* PCSearchViewController.m in Sources */,
 				F3FA72F81AD3552900E53992 /* PCProfileInfoTableViewController.m in Sources */,
 				C75447BE1AD5E42500C67939 /* SSKeychain.m in Sources */,
+				6B152EF11AD851F70033C7CA /* PCPhotoAnnotation.m in Sources */,
 				C75447BF1AD5E42500C67939 /* SSKeychainQuery.m in Sources */,
 				C7D661FD1AD5933300EC008F /* PCHashtag.m in Sources */,
 				C71ADCAE1AD3204500190E51 /* main.m in Sources */,
