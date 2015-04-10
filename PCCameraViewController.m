@@ -62,7 +62,8 @@
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:@selector(snapPicture)],
                     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
-                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction  target:self action:@selector(displayPhotoLibrary:)],
+//                    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch  target:self action:@selector(displayPhotoLibrary)],
+                    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon"] style:UIBarButtonItemStylePlain target:self action:@selector(displayPhotoLibrary)],
                     nil];
 
     [self.toolBar setItems:items];
@@ -170,20 +171,20 @@
     [self.imagePickerController takePicture];
 }
 
-- (void)displayPhotoLibrary:(id)sender {
+- (void)displayPhotoLibrary{
 
-    UIImagePickerController *imagePicker = [UIImagePickerController new];
-
-    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-
-    imagePicker.delegate = self;
-
-    [self presentViewController:imagePicker animated:YES completion:nil];
-
+    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
 
 - (IBAction)cancelPicture {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.tabBarController setSelectedIndex:0];
+    self.readyForNewPic = YES;
+}
+
+- (IBAction)cancelAndReturn{
+    [self.tabBarController setSelectedIndex:0];
+    self.readyForNewPic = YES;
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
