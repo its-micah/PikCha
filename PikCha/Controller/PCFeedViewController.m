@@ -10,6 +10,7 @@
 #import "PCFeedCollectionViewCell.h"
 #import "PCProfileViewController.h"
 #import "PCLoginViewController.h"
+#import "PCCommentViewController.h"
 #import "PCComment.h"
 #import "PCPhoto.h"
 #import "PCUser.h"
@@ -21,12 +22,14 @@
 UICollectionViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,
-UIGestureRecognizerDelegate
+UIGestureRecognizerDelegate,
+PCFeedCollectionViewDelegate
 >
 
 @property NSMutableArray *feedArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *feedCollectionView;
 @property UIRefreshControl *refreshControl;
+@property NSInteger cellNumber;
 
 @end
 
@@ -90,6 +93,8 @@ UIGestureRecognizerDelegate
     PCFeedCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CellID" forIndexPath:indexPath];
     cell.userImageView.layer.cornerRadius = 15;
     cell.commentLabel.text = [self.feedArray[indexPath.row] comment];
+    cell.delegate = self;
+    cell.cellNumber = indexPath.row;
 
     NSDateFormatter* dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm a"];
@@ -186,6 +191,18 @@ UIGestureRecognizerDelegate
 }
 
 
+- (void)showSegue:(NSInteger)cellNumber{
+        self.cellNumber = cellNumber;
+}
+
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)button {
+    PCCommentViewController *vc = segue.destinationViewController;
+    PCPhoto *photo = [PCPhoto new];
+    photo = [self.feedArray objectAtIndex:self.cellNumber];
+    vc.photo = photo;
+}
 
 
 //- (IBAction)onPicDoubleTapped:(UITapGestureRecognizer *)sender {
