@@ -696,7 +696,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="5sZ-ul-z9Q"/>
+                    <navigationItem key="navigationItem" id="5sZ-ul-z9Q">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="x7z-0d-bz6">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onLogOutButtonTapped:" destination="qaP-ce-7Qt" id="ogL-ol-mDd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="eds-tZ-dY8" id="b3e-4G-Or2"/>
                         <outlet property="profileCollectionView" destination="eds-tZ-dY8" id="cfH-Vd-Ynu"/>

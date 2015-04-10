@@ -61,6 +61,10 @@ UIScrollViewDelegate
     [self loadInfo];
 }
 
+- (IBAction)onLogOutButtonTapped:(id)sender {
+
+    
+}
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
